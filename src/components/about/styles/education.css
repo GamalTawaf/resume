@@ -1,0 +1,24 @@
+.edu-body {
+    padding: 1rem;
+}
+
+.edu-item {
+    margin-bottom: 1rem;
+}
+
+.edu-degree {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.edu-institution {
+    font-size: 1rem;
+    color: var(--tertiary-color);
+    margin-bottom: 0.5rem;
+}
+
+.edu-meta {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}

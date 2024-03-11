@@ -1,0 +1,43 @@
+.certifiction {
+    padding-top:  20px;
+}
+.cert-body {
+    padding: 1rem;
+}
+
+.cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px dashed var(--secondary-color);
+}
+
+.cert-item:last-child {
+    border-bottom: none;
+}
+
+.cert-name {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.cert-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.cert-meta a {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.cert-meta .cert-date,
+.cert-meta .cert-issuer {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}

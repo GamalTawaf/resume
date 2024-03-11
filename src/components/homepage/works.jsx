@@ -6,43 +6,122 @@ import Card from "../common/card";
 import "./styles/works.css";
 
 const Works = () => {
-	return (
-		<div className="works">
-			<Card
-				icon={faBriefcase}
-				title="Work"
-				body={
-					<div className="works-body">
-						<div className="work">
-							<img
-								src="./facebook.png"
-								alt="facebook"
-								className="work-image"
-							/>
-							<div className="work-title">Facebook</div>
-							<div className="work-subtitle">
-								Software Engineer
-							</div>
-							<div className="work-duration">2019 - Present</div>
-						</div>
+  return (
+    <>
 
-						<div className="work">
-							<img
-								src="./twitter.png"
-								alt="twitter"
-								className="work-image"
-							/>
-							<div className="work-title">Twitter</div>
-							<div className="work-subtitle">
-								Software Engineer
-							</div>
-							<div className="work-duration">2019 - Present</div>
-						</div>
-					</div>
-				}
-			/>
-		</div>
-	);
+      <div className="">
+        <div className="works">
+          <Card
+            icon={faBriefcase}
+            title="Work"
+            body={
+              <div className="works-body">
+                <div className="work">
+                  <div className="work-title">Fiserv</div>
+                  <div className="work-subtitle">
+                    Senior Software Engineer
+                  </div>
+                  <div className="work-duration">Jan 2026 - Present</div>
+                </div>
+                <div className="work">
+                  <div className="work-title">Inkeros</div>
+                  <div className="work-subtitle">
+                    Solution Architect / Engineering Team Lead
+                  </div>
+                  <div className="work-duration">Jan 2025 - Jan 2026</div>
+                </div>
+                <div className="work">
+                  <div className="work-title">PERCS</div>
+                  <div className="work-subtitle">
+                    Senior Software Engineer
+                  </div>
+                  <div className="work-duration">Apr 2024 - Jan 2025</div>
+                </div>
+                <div className="work">
+                  <div className="work-title">University of Toronto (UFT)</div>
+                  <div className="work-subtitle">
+                    Senior Software Engineer
+                  </div>
+                  <div className="work-duration">Jan 2024 - Apr 2024</div>
+                </div>							<div className="work">
+                  <div className="work-title">Binance</div>
+                  <div className="work-subtitle">
+                    Senior Software Engineer
+                  </div>
+                  <div className="work-duration">Jul 2022 - Jun 2023</div>
+                </div>
+                <div className="work">
+                  <div className="work-title">VerticalScope Inc.</div>
+                  <div className="work-subtitle">
+                    Software Engineer
+                  </div>
+                  <div className="work-duration">July 2021 - Jun 2022</div>
+                </div>
+              </div>
+            }
+          />
+
+        </div>
+      </div>
+
+      <div className="work-card-left">
+        <div className="works">
+          <Card
+            icon={faBriefcase}
+            title="Work"
+            body={
+              <div className="works-body">
+                <div className="work">
+                  <div className="work-title">Afilias</div>
+                  <div className="work-subtitle">
+                    Team Lead / Senior Software Engineer
+                  </div>
+                  <div className="work-duration">Feb 2016 - Jul 2021</div>
+                </div>
+                <div className="work">
+                  <div className="work-title">BlockX Labs</div>
+                  <div className="work-subtitle">
+                    Technologist in Residence
+                  </div>
+                  <div className="work-duration">Nov 2017 - Mar 2018</div>
+                </div>
+
+                <div className="work">
+                  <div className="work-title">API Garage</div>
+                  <div className="work-subtitle">
+                    Application Developer
+                  </div>
+                  <div className="work-duration">Jun 2015 - Jun 2016</div>
+                </div>
+                <div className="work">
+                  <div className="work-title">Carlton Group Ltd.</div>
+                  <div className="work-subtitle">
+                    Application Developer
+                  </div>
+                  <div className="work-duration">Oct 2014 - Jan 2016</div>
+                </div>
+                <div className="work">
+                  <div className="work-title">CareerPal.co - contract</div>
+                  <div className="work-subtitle">
+                    PHP Web Developer
+                  </div>
+                  <div className="work-duration">Jun 2014 - Oct 2014</div>
+                </div>
+                <div className="work">
+                  <div className="work-title">Pavr Labs</div>
+                  <div className="work-subtitle">
+                    PHP Web Developer
+                  </div>
+                  <div className="work-duration">Mar 2013 - Apr 2014</div>
+                </div>
+              </div>
+            }
+          />
+
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Works;
