@@ -69,6 +69,10 @@
 	display: none;
 }
 
+.work-card-left {
+	padding-left: 50px;
+}
+
 @media (max-width: 1024px) {
 	.about-logo {
 		z-index: 100;
@@ -104,6 +108,10 @@
 		padding-top: 30px;
 		display: flex;
 	}
+	.work-card-left {
+		padding-top: 20px;
+		padding-left: 0px;
+	}
 }
 
 @media (max-width: 600px) {
@@ -113,5 +121,9 @@
 
 	.about-image-container {
 		width: 80%;
+	}
+	.work-card-left {
+		padding-top: 20px;
+		padding-left: 0px;
 	}
 }
