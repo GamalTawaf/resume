@@ -21,7 +21,7 @@ const INFO = {
 	about: {
 		title: "I’m Gamal Tawaf. I live in Ontario",
 		description:
-			"I've worked on a variety of projects over the years and I'm proud of the progress I've made. Many of these projects are private and I'm not able to share them. I'm building my protfolio while learning new Technolgies on the way"
+			"I've worked on a variety of projects over the years and I'm proud of the progress I've made. Mainly in Laravel PHP, but I have also worked with Ruby on Rails, Java Spring Boot, Vuejs. I have had the pleasure of working with Docker and containerization. I'm building my protfolio while learning new Technolgies on the way."
 		},
 
 	projects: [
