@@ -31,7 +31,7 @@ const INFO = {
 				"A smiple Todo app project, I built to learn React and Typescript basics features",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
-			link: "https://gamaltawaf.github.io/quiz/",
+			link: "https://gamaltawaf.github.io/to-do/",
 		},
 		{
 			title: "Project 2",
