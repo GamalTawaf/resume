@@ -28,7 +28,15 @@ const INFO = {
 		{
 			title: "Project 1",
 			description:
-				"A smiple Quiz app project, I built to learn React and Typescript. Try cheat mode :P ",
+				"A smiple Todo app project, I built to learn React and Typescript basics features",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+			linkText: "View Project",
+			link: "https://gamaltawaf.github.io/quiz/",
+		},
+		{
+			title: "Project 2",
+			description:
+				"A smiple Quiz app project, I built to learn React and Typescript more advanced features. Try cheat mode :P ",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
 			link: "https://gamaltawaf.github.io/quiz/",
