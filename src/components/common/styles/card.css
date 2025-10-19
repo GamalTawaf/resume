@@ -7,8 +7,8 @@
 }
 
 .card-container {
-	padding: 30px;
-	padding-bottom: 5px;
+	padding: 36px;
+	padding-bottom: 12px;
 }
 
 .card-header {
@@ -29,6 +29,6 @@
 }
 
 .card-body {
-	padding-top: 40px;
+	padding-top: 28px;
 	font-size: 15px;
 }

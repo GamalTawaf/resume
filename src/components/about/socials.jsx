@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faCertificate } from "@fortawesome/free-solid-svg-icons";
 import {
 	faGithub,
 	faLinkedin,
@@ -23,7 +23,7 @@ const Socials = () => {
 							className="social-icon"
 						/>
 					</div>
-					<div className="social-text">Follow on GitHub</div>
+					<div className="social-text">GitHub</div>
 				</a>
 			</div>
 
@@ -42,7 +42,21 @@ const Socials = () => {
 					<div className="social-text">Follow on LinkedIn</div>
 				</a>
 			</div>
-
+			<div className="social">
+				<a
+					href={INFO.socials.google_certified}
+					target="_blank"
+					rel="noreferrer"
+				>
+					<div className="social-icon">
+						<FontAwesomeIcon
+							icon={faCertificate}
+							className="social-icon"
+						/>
+					</div>
+					<div className="social-text">View Google Certificate</div>
+				</a>
+			</div>
 			<div className="email">
 				<div className="email-wrapper">
 					<a

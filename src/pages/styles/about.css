@@ -33,8 +33,34 @@
 	width: 100% !important;
 }
 
+.about-download {
+    margin: 1rem 0;
+}
+
 .about-subtitle {
 	width: 80% !important;
+}
+
+.about-skills-experience {
+	margin-top: 2.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.75rem;
+	align-items: stretch;
+}
+
+/* make sections sit side-by-side on wider screens */
+@media (min-width: 1100px) {
+	.about-skills-experience {
+		flex-direction: row;
+		gap: 2.5rem;
+		align-items: flex-start;
+	}
+
+	.about-skills-experience > * {
+		flex: 1 1 0;
+		min-width: 0;
+	}
 }
 
 .about-left-side {

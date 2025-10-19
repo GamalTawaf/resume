@@ -5,6 +5,10 @@ import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
 import Socials from "../components/about/socials";
+import DownloadButton from "../components/common/downloadButton";
+import Skills from "../components/about/skills";
+import Certifications from "../components/about/certifications";
+import Education from "../components/about/education";
 import Works from "../components/homepage/works";
 
 import INFO from "../data/user";
@@ -45,6 +49,10 @@ const About = () => {
 								<div className="title about-title">
 									{INFO.about.title}
 								</div>
+								
+								<div className="about-download">
+									<DownloadButton />
+								</div>
 
 								<div className="subtitle about-subtitle">
 									{INFO.about.description}
@@ -61,6 +69,11 @@ const About = () => {
 							<div className="homepage-after-title">
 								<Works />
 							</div>
+						</div>
+						<div className="about-skills-experience">
+							<Certifications certifications={INFO.certifications} />
+							<Skills skills={INFO.skills} />
+							<Education education={INFO.education} />
 						</div>
 
 						<div className="about-socials-mobile">

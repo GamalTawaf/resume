@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { faCertificate, faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faGithub,
@@ -116,6 +116,16 @@ const Homepage = () => {
 							>
 								<FontAwesomeIcon
 									icon={faStackOverflow}
+									className="homepage-social-icon"
+								/>
+							</a>
+							<a
+								href={INFO.socials.google_certified}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<FontAwesomeIcon
+									icon={faCertificate}
 									className="homepage-social-icon"
 								/>
 							</a>
