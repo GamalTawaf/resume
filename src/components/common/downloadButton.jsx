@@ -6,7 +6,7 @@ import "./styles/downloadButton.css";
 const DownloadButton = () => {
     return (
         <a 
-            href="https://raw.githubusercontent.com/GamalTawaf/resume/main/resume/GamalTawaf_Resume.pdf" 
+            href="https://github.com/GamalTawaf/resume/blob/main/resume/GamalTawaf_resume.pdf?raw=true" 
             className="download-button"
             target="_blank"
             rel="noopener noreferrer"
