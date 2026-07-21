@@ -67,13 +67,22 @@ const INFO = {
 			link: "https://gamaltawaf.github.io/ping-pong/",
 		},
 		{
-			title: "Blockchain Demo",
+			title: "Learn Blockchain",
 			description:
 				"An interactive teaching tool for how blockchains work: SHA-256 hashing, proof-of-work mining, and chain-link validation with live tamper detection.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			tag: "JavaScript",
 			linkText: "Play Now",
 			link: "https://gamaltawaf.github.io/resume/blockchain-demo.html",
+		},
+		{
+			title: "Bricks",
+			description:
+				"A Breakout-style browser game built with Svelte. Classic mode ramps up through tougher waves, and Endless mode keeps sending down new rows of bricks that fall faster over time.",
+			logo: "https://cdn.simpleicons.org/svelte",
+			tag: "Svelte",
+			linkText: "Play Now",
+			link: "https://gamaltawaf.github.io/bricks/",
 		},
 	],
 
