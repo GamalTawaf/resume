@@ -38,6 +38,12 @@
 	background-size: 48px 48px;
 	background-position: -1px -1px;
 	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.cn-page main.cn-wrap {
+	flex: 1 0 auto;
 }
 
 .cn-page a {
