@@ -36,9 +36,7 @@ const Games = () => {
 				<main className="cn-wrap">
 					<section className="cn-hero cn-hero-lite">
 						<div className="cn-eyebrow-row cn-reveal cn-r1">
-							<span className="cn-eyebrow">
-								$ ls ~/games
-							</span>
+							<span className="cn-eyebrow">$ ls ~/games</span>
 						</div>
 						<h1 className="cn-headline cn-reveal cn-r2">
 							Games I've built along the way
@@ -75,9 +73,7 @@ const Games = () => {
 									</p>
 									{!game.comingSoon && (
 										<div className="cn-build-run">
-											<span className="cn-prompt">
-												$
-											</span>{" "}
+											<span className="cn-prompt">$</span>{" "}
 											open{" "}
 											<a
 												href={game.link}
