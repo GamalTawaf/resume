@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blockchain Demo — See How a Blockchain is Built</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --card: #1e222b;
+    --border: #2a2f3a;
+    --text: #e6e8eb;
+    --muted: #9aa2af;
+    --accent: #4f8cff;
+    --green: #1a7f37;
+    --green-bg: #10331d;
+    --red: #e5484d;
+    --red-bg: #3a1418;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  .sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    background: var(--panel);
+    border-right: 1px solid var(--border);
+    padding: 24px;
+    overflow-y: auto;
+  }
+  .sidebar h1 { font-size: 1.3rem; margin-top: 0; }
+  .sidebar h2 { font-size: 0.95rem; color: var(--accent); margin-bottom: 4px; }
+  .sidebar p { font-size: 0.88rem; color: var(--muted); line-height: 1.5; margin-top: 4px; }
+  .sidebar section { margin-bottom: 22px; }
+  .playground { margin-top: 8px; }
+  .playground label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 4px; }
+  .playground input {
+    width: 100%;
+    padding: 6px 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 0.85rem;
+  }
+  .playground code {
+    display: block;
+    margin-top: 6px;
+    padding: 6px 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.72rem;
+    word-break: break-all;
+    color: var(--accent);
+  }
+  .demo {
+    flex: 1;
+    padding: 24px;
+    min-width: 0;
+  }
+  .status-banner {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .status-banner.valid { background: var(--green-bg); color: #4ade80; }
+  .status-banner.invalid { background: var(--red-bg); color: var(--red); }
+  .add-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .add-form label {
+    font-size: 0.82rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .add-form select, .add-form input[type="text"], .add-form button {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-size: 0.88rem;
+  }
+  .add-form input[type="text"] { flex: 1; min-width: 220px; }
+  .add-form button {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .add-form button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .add-form button#cancel-btn { background: var(--red-bg); border-color: var(--red); color: var(--red); }
+  .form-error { color: var(--red); font-size: 0.82rem; min-height: 1.2em; margin-top: 6px; }
+  .mining-panel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .mining-panel[hidden] { display: none; }
+  .spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .chain-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 4px;
+    margin-top: 20px;
+  }
+  .chain-item { display: flex; align-items: center; gap: 4px; }
+  .connector { color: var(--muted); font-size: 1.2rem; }
+  .block-card {
+    width: 220px;
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+  }
+  .block-card.valid { border-color: var(--green); }
+  .block-card.invalid { border-color: var(--red); }
+  .block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+  }
+  .badge { font-size: 0.72rem; font-weight: 500; }
+  .block-card.valid .badge { color: #4ade80; }
+  .block-card.invalid .badge { color: var(--red); }
+  .field { margin-bottom: 6px; }
+  .field label {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--muted);
+  }
+  .field span { font-size: 0.78rem; word-break: break-all; }
+  .field input.data-input {
+    width: 100%;
+    padding: 4px 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-size: 0.8rem;
+  }
+  .hint { margin-top: 20px; font-size: 0.82rem; color: var(--muted); }
+  .fallback { padding: 40px; max-width: 600px; margin: 0 auto; }
+  @media (max-width: 800px) {
+    .layout { flex-direction: column; }
+    .sidebar { width: auto; border-right: none; border-bottom: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <h1>What is a Blockchain?</h1>
+    <section>
+      <h2>1. Blocks &amp; Data</h2>
+      <p>A blockchain is a chain of blocks, each holding some data. Below, the first block (the "genesis block") is the root everything else builds on.</p>
+    </section>
+    <section>
+      <h2>2. Hashing</h2>
+      <p>Every block gets a fingerprint — a SHA-256 hash — computed from its contents. Change one character of the input and the hash comes out completely different. Try it:</p>
+      <div class="playground">
+        <label for="playground-input">Type anything:</label>
+        <input id="playground-input" type="text" placeholder="e.g. hello world" autocomplete="off">
+        <code id="playground-output">(empty)</code>
+      </div>
+    </section>
+    <section>
+      <h2>3. Linking Blocks</h2>
+      <p>Each block stores the previous block's hash as its "prevHash." That link is what turns a list of blocks into a <em>chain</em> — each one points back at the one before it.</p>
+    </section>
+    <section>
+      <h2>4. Proof of Work</h2>
+      <p>Adding a block isn't free: the app must search for a "nonce" value that makes the block's hash start with N zero hex digits (each hex digit = 4 bits). Higher difficulty means more attempts — cheap to verify, expensive to produce.</p>
+    </section>
+    <section>
+      <h2>5. Immutability</h2>
+      <p>Try it: edit any block's data below and watch it — and everything after it — turn red. That's the whole point: once data is sealed into a hash, tampering is instantly visible.</p>
+    </section>
+  </aside>
+  <main class="demo">
+    <div id="status-banner" class="status-banner valid" aria-live="polite">Chain Valid ✓</div>
+
+    <form id="add-form" class="add-form">
+      <label for="difficulty-select">Difficulty
+        <select id="difficulty-select">
+          <option value="0">0 (instant)</option>
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </label>
+      <input id="data-input-new" type="text" maxlength="500" placeholder="Block data, e.g. &quot;Alice pays Bob 5 coins&quot;" autocomplete="off">
+      <button type="submit" id="add-btn">Add Block</button>
+      <button type="button" id="cancel-btn" hidden>Cancel</button>
+    </form>
+    <div id="form-error" class="form-error"></div>
+
+    <div id="mining-panel" class="mining-panel" hidden aria-live="polite">
+      <span class="spinner"></span>
+      <span id="mining-stats">Mining…</span>
+    </div>
+
+    <div id="chain-container" class="chain-container"></div>
+
+    <p class="hint">Try tampering: edit an earlier block's data above and watch downstream blocks turn red. Revert it and the chain heals.</p>
+  </main>
+</div>
+
+<script>
+'use strict';
+
+if (!window.crypto || !window.crypto.subtle) {
+  document.body.innerHTML =
+    '<main class="fallback"><h1>Blockchain Demo</h1>' +
+    '<p>This demo requires the Web Crypto API (crypto.subtle), which is unavailable in this browser. ' +
+    'Please try a recent version of Chrome, Firefox, Safari, or Edge.</p></main>';
+  throw new Error('crypto.subtle unavailable');
+}
+
+const GENESIS_PREV_HASH = '0'.repeat(64);
+
+async function sha256Hex(text) {
+  const buf = new TextEncoder().encode(text);
+  const digest = await crypto.subtle.digest('SHA-256', buf);
+  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+function blockString(b) {
+  return `${b.index}|${b.timestamp}|${b.data}|${b.previousHash}|${b.nonce}`;
+}
+
+// Pure, DOM-free: recomputes each block's hash and link, and marks every
+// block from the first broken one onward as displayInvalid (propagation).
+async function computeValidity(chainArr) {
+  const results = [];
+  let brokenFromIndex = null;
+  for (let i = 0; i < chainArr.length; i++) {
+    const b = chainArr[i];
+    const recomputed = await sha256Hex(blockString(b));
+    const selfValid = recomputed === b.hash;
+    const linkValid = i === 0 ? b.previousHash === GENESIS_PREV_HASH : b.previousHash === chainArr[i - 1].hash;
+    const intrinsicValid = selfValid && linkValid;
+    if (!intrinsicValid && brokenFromIndex === null) brokenFromIndex = i;
+    results.push({ selfValid, linkValid, intrinsicValid });
+  }
+  return results.map((r, i) => ({
+    ...r,
+    displayInvalid: brokenFromIndex !== null && i >= brokenFromIndex,
+  }));
+}
+
+let miningToken = 0;
+async function mineBlock(candidate, difficulty, onProgress) {
+  const myToken = ++miningToken;
+  const prefix = '0'.repeat(difficulty);
+  const CHUNK = 40;
+  const start = performance.now();
+  let attempts = 0;
+
+  while (true) {
+    if (myToken !== miningToken) {
+      const err = new Error('MiningCancelled');
+      err.cancelled = true;
+      throw err;
+    }
+    candidate.nonce = attempts;
+    const hash = await sha256Hex(blockString(candidate));
+    attempts++;
+
+    if (hash.startsWith(prefix)) {
+      return { hash, nonce: candidate.nonce, attempts, elapsedMs: performance.now() - start };
+    }
+
+    if (attempts % CHUNK === 0) {
+      onProgress({ attempts, nonce: candidate.nonce, elapsedMs: performance.now() - start });
+      await new Promise(requestAnimationFrame);
+    }
+  }
+}
+
+function escapeAttr(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/'/g, '&#39;');
+}
+
+function shortHash(h) {
+  return h.slice(0, 8) + '…' + h.slice(-8);
+}
+
+let chain = [];
+let validationToken = 0;
+
+async function initGenesis() {
+  const genesis = {
+    index: 0,
+    timestamp: Date.now(),
+    data: 'Genesis Block',
+    previousHash: GENESIS_PREV_HASH,
+    nonce: 0,
+    difficulty: 0,
+    hash: '',
+  };
+  genesis.hash = await sha256Hex(blockString(genesis));
+  chain = [genesis];
+}
+
+function updateValidityUI(results) {
+  results.forEach((r, i) => {
+    const card = document.getElementById(`block-card-${i}`);
+    if (!card) return;
+    card.classList.toggle('invalid', r.displayInvalid);
+    card.classList.toggle('valid', !r.displayInvalid);
+    const badge = card.querySelector('.badge');
+    if (badge) badge.textContent = r.displayInvalid ? '⚠ invalid' : '✓ valid';
+  });
+
+  const bannerEl = document.getElementById('status-banner');
+  const firstInvalid = results.findIndex((r) => r.displayInvalid);
+  if (firstInvalid === -1) {
+    bannerEl.textContent = 'Chain Valid ✓';
+    bannerEl.className = 'status-banner valid';
+  } else {
+    bannerEl.textContent = `Chain INVALID — tampering detected at Block #${firstInvalid}`;
+    bannerEl.className = 'status-banner invalid';
+  }
+}
+
+// Lightweight: recomputes validity and patches classes/badges only,
+// so it never disturbs focus/cursor in an in-progress edit.
+async function refreshValidity() {
+  const myToken = ++validationToken;
+  const results = await computeValidity(chain);
+  if (myToken !== validationToken) return;
+  updateValidityUI(results);
+}
+
+// Full rebuild of the chain DOM — used after init/add, not on every keystroke.
+async function renderChain() {
+  const container = document.getElementById('chain-container');
+  container.innerHTML = chain
+    .map((b, i) => `
+      <div class="chain-item">
+        ${i > 0 ? '<div class="connector">→</div>' : ''}
+        <div class="block-card" id="block-card-${i}">
+          <div class="block-header">Block #${b.index} <span class="badge">✓ valid</span></div>
+          <div class="field"><label>Time</label><span>${new Date(b.timestamp).toLocaleString()}</span></div>
+          <div class="field">
+            <label for="data-input-${i}">Data</label>
+            <input type="text" class="data-input" id="data-input-${i}" data-index="${i}" value="${escapeAttr(b.data)}" maxlength="500">
+          </div>
+          <div class="field"><label>Prev Hash</label><span title="${b.previousHash}">${shortHash(b.previousHash)}</span></div>
+          <div class="field"><label>Hash</label><span title="${b.hash}">${shortHash(b.hash)}</span></div>
+          <div class="field"><label>Nonce</label><span>${b.nonce}</span></div>
+        </div>
+      </div>
+    `)
+    .join('');
+
+  const myToken = ++validationToken;
+  const results = await computeValidity(chain);
+  if (myToken !== validationToken) return;
+  updateValidityUI(results);
+}
+
+// Edit-in-place tamper mechanism, debounced so we hash on pause, not per keystroke.
+const chainContainer = document.getElementById('chain-container');
+let editDebounce = null;
+chainContainer.addEventListener('input', (e) => {
+  if (!e.target.classList.contains('data-input')) return;
+  const idx = Number(e.target.dataset.index);
+  chain[idx].data = e.target.value;
+  clearTimeout(editDebounce);
+  editDebounce = setTimeout(refreshValidity, 250);
+});
+
+const addForm = document.getElementById('add-form');
+const dataInputNew = document.getElementById('data-input-new');
+const difficultySelect = document.getElementById('difficulty-select');
+const addBtn = document.getElementById('add-btn');
+const cancelBtn = document.getElementById('cancel-btn');
+const miningPanel = document.getElementById('mining-panel');
+const miningStats = document.getElementById('mining-stats');
+const formError = document.getElementById('form-error');
+
+addForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const value = dataInputNew.value.trim();
+  formError.textContent = '';
+  if (!value) {
+    formError.textContent = "Enter some data for the block before mining.";
+    dataInputNew.focus();
+    return;
+  }
+
+  addBtn.disabled = true;
+  difficultySelect.disabled = true;
+  dataInputNew.disabled = true;
+  cancelBtn.hidden = false;
+  miningPanel.hidden = false;
+  miningStats.textContent = 'Mining…';
+
+  const difficulty = Number(difficultySelect.value);
+  const candidate = {
+    index: chain.length,
+    timestamp: Date.now(),
+    data: value,
+    previousHash: chain[chain.length - 1].hash,
+    nonce: 0,
+    difficulty,
+    hash: '',
+  };
+
+  const onProgress = ({ attempts, nonce, elapsedMs }) => {
+    const seconds = elapsedMs / 1000;
+    const rate = seconds > 0 ? Math.round(attempts / seconds) : attempts;
+    miningStats.textContent = `Mining… attempts: ${attempts}, nonce: ${nonce}, elapsed: ${seconds.toFixed(1)}s, rate: ${rate} H/s`;
+  };
+
+  try {
+    const result = await mineBlock(candidate, difficulty, onProgress);
+    candidate.hash = result.hash;
+    candidate.nonce = result.nonce;
+    chain.push(candidate);
+    dataInputNew.value = '';
+    await renderChain();
+  } catch (err) {
+    if (err && err.cancelled) {
+      miningStats.textContent = 'Mining cancelled.';
+    } else {
+      formError.textContent = 'Mining failed unexpectedly — see console.';
+      console.error(err);
+    }
+  } finally {
+    addBtn.disabled = false;
+    difficultySelect.disabled = false;
+    dataInputNew.disabled = false;
+    cancelBtn.hidden = true;
+    miningPanel.hidden = true;
+  }
+});
+
+cancelBtn.addEventListener('click', () => {
+  miningToken++; // supersedes the in-flight mineBlock loop, which throws MiningCancelled
+});
+
+// Sidebar hash playground — reuses sha256Hex directly.
+const playgroundInput = document.getElementById('playground-input');
+const playgroundOutput = document.getElementById('playground-output');
+let playgroundToken = 0;
+playgroundInput.addEventListener('input', async () => {
+  const text = playgroundInput.value;
+  const myToken = ++playgroundToken;
+  const hash = text ? await sha256Hex(text) : '';
+  if (myToken !== playgroundToken) return;
+  playgroundOutput.textContent = hash || '(empty)';
+});
+
+async function runSelfTest() {
+  const results = [];
+  const assert = (cond, msg) => {
+    results.push({ pass: !!cond, msg });
+    console.assert(cond, msg);
+  };
+
+  const b0 = { index: 0, timestamp: 1000, data: 'Genesis Block', previousHash: GENESIS_PREV_HASH, nonce: 0, difficulty: 0, hash: '' };
+  b0.hash = await sha256Hex(blockString(b0));
+  const b1 = { index: 1, timestamp: 2000, data: 'Alice pays Bob', previousHash: b0.hash, nonce: 0, difficulty: 0, hash: '' };
+  b1.hash = await sha256Hex(blockString(b1));
+  const b2 = { index: 2, timestamp: 3000, data: 'Bob pays Carol', previousHash: b1.hash, nonce: 0, difficulty: 0, hash: '' };
+  b2.hash = await sha256Hex(blockString(b2));
+  const testChain = [b0, b1, b2];
+
+  let res = await computeValidity(testChain);
+  assert(res.every((r) => !r.displayInvalid), 'fresh chain should be fully valid');
+
+  testChain[1].data = 'Alice pays Mallory';
+  res = await computeValidity(testChain);
+  assert(!res[0].displayInvalid, 'block 0 should remain valid after tampering block 1');
+  assert(res[1].displayInvalid, 'block 1 should be invalid after tampering its data');
+  assert(res[2].displayInvalid, 'block 2 should be invalid due to propagation from block 1');
+
+  testChain[1].data = 'Alice pays Bob';
+  res = await computeValidity(testChain);
+  assert(res.every((r) => !r.displayInvalid), 'chain should be valid again after reverting tampered data');
+
+  const passed = results.filter((r) => r.pass).length;
+  const total = results.length;
+  const summary = `SELFTEST: ${passed}/${total} passed`;
+  console.log(summary);
+
+  const banner = document.createElement('div');
+  banner.textContent = summary + (passed === total ? ' ✅' : ' ❌ (see console)');
+  banner.style.cssText =
+    'position:fixed;top:0;left:0;right:0;padding:8px;text-align:center;font-family:monospace;z-index:9999;' +
+    (passed === total ? 'background:#1a7f37;color:#fff;' : 'background:#c1121f;color:#fff;');
+  document.body.prepend(banner);
+}
+
+(async function init() {
+  await initGenesis();
+  await renderChain();
+  if (new URLSearchParams(location.search).has('selftest')) {
+    await runSelfTest();
+  }
+})();
+</script>
+</body>
+</html>

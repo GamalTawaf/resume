@@ -1,56 +1,30 @@
 import React from "react";
-import { faBrain } from "@fortawesome/free-solid-svg-icons";
-import Card from "../common/card";
-import "./styles/skills.css";
+
+const CATEGORIES = [
+	{ key: "languages", label: "Languages" },
+	{ key: "frameworks", label: "Frameworks" },
+	{ key: "cloud", label: "Cloud & Infrastructure" },
+	{ key: "tools", label: "Tools & Methods" },
+];
 
 const Skills = ({ skills }) => {
-  return (
-    <div className="skills">
-      <Card
-        icon={faBrain}
-        title="Skills"
-        body={
-          <div className="skills-body">
-            <div className="skill-category">
-              <h3>Programming Languages</h3>
-              <div className="skill-list">
-                {skills.languages.map((lang, index) => (
-                  <span key={index} className="skill-item">{lang}</span>
-                ))}
-              </div>
-            </div>
-
-            <div className="skill-category">
-              <h3>Frameworks</h3>
-              <div className="skill-list">
-                {skills.frameworks.map((framework, index) => (
-                  <span key={index} className="skill-item">{framework}</span>
-                ))}
-              </div>
-            </div>
-
-            <div className="skill-category">
-              <h3>Cloud & Infrastructure</h3>
-              <div className="skill-list">
-                {skills.cloud.map((tech, index) => (
-                  <span key={index} className="skill-item">{tech}</span>
-                ))}
-              </div>
-            </div>
-
-            <div className="skill-category">
-              <h3>Tools & Methods</h3>
-              <div className="skill-list">
-                {skills.tools.map((tool, index) => (
-                  <span key={index} className="skill-item">{tool}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        }
-      />
-    </div>
-  );
+	return (
+		<div className="cn-panel">
+			<div className="cn-panel-title">Tech Stack</div>
+			{CATEGORIES.map((category) => (
+				<div className="cn-tag-group" key={category.key}>
+					<div className="cn-tag-group-label">{category.label}</div>
+					<div className="cn-tag-list">
+						{skills[category.key].map((item) => (
+							<span className="cn-tag" key={item}>
+								{item}
+							</span>
+						))}
+					</div>
+				</div>
+			))}
+		</div>
+	);
 };
 
 export default Skills;

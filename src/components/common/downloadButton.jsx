@@ -1,20 +1,19 @@
-import React from 'react';
+import React from "react";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./styles/downloadButton.css";
 
 const DownloadButton = () => {
-  return (
-    <a
-      href="https://github.com/GamalTawaf/resume/blob/main/resume/GamalTawaf.pdf?raw=true"
-      className="download-button"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <FontAwesomeIcon icon={faFileDownload} />
-      <span>Download Resume</span>
-    </a>
-  );
+	return (
+		<a
+			href="https://github.com/GamalTawaf/resume/blob/main/resume/GamalTawaf.pdf?raw=true"
+			className="cn-btn"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<FontAwesomeIcon icon={faFileDownload} />
+			<span>Download Resume</span>
+		</a>
+	);
 };
 
 export default DownloadButton;

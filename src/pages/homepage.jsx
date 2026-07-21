@@ -1,158 +1,135 @@
-import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
-import { faCertificate, faMailBulk } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faStackOverflow,
-} from "@fortawesome/free-brands-svg-icons";
-
-import Logo from "../components/common/logo";
-import Footer from "../components/common/footer";
-import NavBar from "../components/common/navBar";
-import AllProjects from "../components/projects/allProjects";
+import CnTopbar from "../components/common/cnTopbar";
+import CnFooter from "../components/common/cnFooter";
+import CnLinksObject from "../components/common/cnLinksObject";
+import CnReleaseList from "../components/common/cnReleaseList";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
 
 import "./styles/homepage.css";
 
+const stripProtocol = (url) =>
+	url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+
 const Homepage = () => {
-  const [stayLogo, setStayLogo] = useState(false);
-  const [logoSize, setLogoSize] = useState(80);
-  const [oldLogoSize, setOldLogoSize] = useState(80);
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+	const currentSEO = SEO.find((item) => item.page === "home");
+	const totalReleases = INFO.workHistory.length;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      let scroll = Math.round(window.pageYOffset, 2);
+	return (
+		<React.Fragment>
+			<Helmet>
+				<title>{INFO.main.title}</title>
+				<meta name="description" content={currentSEO.description} />
+				<meta
+					name="keywords"
+					content={currentSEO.keywords.join(", ")}
+				/>
+			</Helmet>
 
-      let newLogoSize = 80 - (scroll * 4) / 10;
+			<div className="cn-page">
+				<CnTopbar active="home" />
 
-      if (newLogoSize < oldLogoSize) {
-        if (newLogoSize > 40) {
-          setLogoSize(newLogoSize);
-          setOldLogoSize(newLogoSize);
-          setStayLogo(false);
-        } else {
-          setStayLogo(true);
-        }
-      } else {
-        setLogoSize(newLogoSize);
-        setStayLogo(false);
-      }
-    };
+				<main className="cn-wrap">
+					<section className="cn-hero">
+						<div className="cn-hero-grid">
+							<div className="cn-hero-main">
+								<div className="cn-eyebrow-row cn-reveal cn-r1">
+									<span className="cn-eyebrow">
+										CHANGELOG.md
+									</span>
+									<span className="cn-status-pill">
+										<span className="cn-dot"></span>ACTIVE
+									</span>
+								</div>
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [logoSize, oldLogoSize]);
+								<div className="cn-version-row cn-reveal cn-r2">
+									<span className="cn-version-tag">
+										v{totalReleases}.0.0
+									</span>
+									<span className="cn-name">
+										{INFO.main.name}
+									</span>
+								</div>
 
-  const currentSEO = SEO.find((item) => item.page === "home");
+								<h1 className="cn-headline cn-reveal cn-r3">
+									{INFO.homepage.title}
+								</h1>
 
-  const logoStyle = {
-    display: "flex",
-    position: stayLogo ? "fixed" : "relative",
-    top: stayLogo ? "3vh" : "auto",
-    zIndex: 999,
-    border: stayLogo ? "1px solid white" : "none",
-    borderRadius: stayLogo ? "50%" : "none",
-    boxShadow: stayLogo ? "0px 4px 10px rgba(0, 0, 0, 0.25)" : "none",
-  };
+								<p className="cn-lede cn-reveal cn-r4">
+									{INFO.homepage.description}
+								</p>
+							</div>
 
-  return (
-    <React.Fragment>
-      <Helmet>
-        <title>{INFO.main.title}</title>
-        <meta name="description" content={currentSEO.description} />
-        <meta
-          name="keywords"
-          content={currentSEO.keywords.join(", ")}
-        />
-      </Helmet>
+							<div className="cn-hero-side cn-reveal cn-r5">
+								<CnLinksObject />
+							</div>
+						</div>
+					</section>
 
-      <div className="page-content">
-        <NavBar active="home" />
-        <div className="content-wrapper">
-          <div className="homepage-logo-container">
-            <div style={logoStyle}>
-              <Logo width={logoSize} link={false} />
-            </div>
-          </div>
+					<section aria-labelledby="cn-releases-head">
+						<div className="cn-section-head">
+							<span className="cn-eyebrow" id="cn-releases-head">
+								Release History
+							</span>
+							<span className="cn-section-note">
+								{totalReleases} releases since 2013
+							</span>
+						</div>
+						<CnReleaseList limit={6} />
+					</section>
 
-          <div className="homepage-container">
-            <div className="homepage-first-area">
-              <div className="homepage-first-area-left-side">
-                <div className="title homepage-title">
-                  {INFO.homepage.title}
-                </div>
+					<section aria-labelledby="cn-builds-head">
+						<div className="cn-section-head">
+							<span className="cn-eyebrow" id="cn-builds-head">
+								Featured Builds
+							</span>
+							<span className="cn-section-note">
+								{INFO.projects.length} published
+							</span>
+						</div>
 
-                <div className="subtitle homepage-subtitle">
-                  {INFO.homepage.description}
-                </div>
-              </div>
+						<div className="cn-builds">
+							{INFO.projects.map((project) => (
+								<div className="cn-build" key={project.title}>
+									<div className="cn-build-head">
+										<span className="cn-build-name">
+											{project.title}
+										</span>
+										<span className="cn-build-tag">
+											{project.tag}
+										</span>
+									</div>
+									<p className="cn-build-desc">
+										{project.description}
+									</p>
+									<div className="cn-build-run">
+										<span className="cn-prompt">$</span>{" "}
+										open{" "}
+										<a
+											href={project.link}
+											target="_blank"
+											rel="noreferrer"
+										>
+											{stripProtocol(project.link)} →
+										</a>
+									</div>
+								</div>
+							))}
+						</div>
+					</section>
+				</main>
 
-
-            </div>
-
-            <div className="homepage-socials">
-              <a
-                href={INFO.socials.github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  className="homepage-social-icon"
-                />
-              </a>
-              <a
-                href={INFO.socials.stackoverflow}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={faStackOverflow}
-                  className="homepage-social-icon"
-                />
-              </a>
-              <a
-                href={INFO.socials.google_certified}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={faCertificate}
-                  className="homepage-social-icon"
-                />
-              </a>
-              <a
-                href={`mailto:${INFO.main.email}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={faMailBulk}
-                  className="homepage-social-icon"
-                />
-              </a>
-            </div>
-
-            <div className="homepage-projects">
-              <AllProjects />
-            </div>
-
-            <div className="page-footer">
-              <Footer />
-            </div>
-          </div>
-        </div>
-      </div>
-    </React.Fragment>
-  );
+				<CnFooter />
+			</div>
+		</React.Fragment>
+	);
 };
 
 export default Homepage;

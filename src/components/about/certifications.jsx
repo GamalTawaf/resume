@@ -1,35 +1,31 @@
 import React from "react";
-import { faCertificate } from "@fortawesome/free-solid-svg-icons";
-import Card from "../common/card";
-import "./styles/certifications.css";
 
 const Certifications = ({ certifications }) => {
-  if (!certifications || certifications.length === 0) return null;
+	if (!certifications || certifications.length === 0) return null;
 
-  return (
-    <div className="certifications">
-      <Card
-        icon={faCertificate}
-        title="Certifications"
-        body={
-          <div className="cert-body">
-            {certifications.map((c, idx) => (
-              <div key={idx} className="cert-item">
-                <div className="cert-name">{c.name}</div>
-                <div className="cert-meta">
-                  <span className="cert-issuer">{c.issuer}</span>
-                  <span className="cert-date">{c.date}</span>
-                  {c.link && (
-                    <a href={c.link} target="_blank" rel="noopener noreferrer">View</a>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        }
-      />
-    </div>
-  );
+	return (
+		<div className="cn-panel">
+			<div className="cn-panel-title">Certifications</div>
+			{certifications.map((c) => (
+				<div className="cn-simple-item" key={c.name}>
+					<div className="cn-simple-item-title">{c.name}</div>
+					<div className="cn-simple-item-meta">
+						<span>{c.issuer}</span>
+						<span>{c.date}</span>
+						{c.link && (
+							<a
+								href={c.link}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								View →
+							</a>
+						)}
+					</div>
+				</div>
+			))}
+		</div>
+	);
 };
 
 export default Certifications;
