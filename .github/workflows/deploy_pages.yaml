@@ -26,6 +26,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Add SPA fallback for deep links
+        run: cp build/index.html build/404.html
       - name: Upload production-ready build files
         uses: actions/upload-pages-artifact@v3
         with:

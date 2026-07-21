@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
-import NavBar from "../components/common/navBar";
-import Footer from "../components/common/footer";
-import Logo from "../components/common/logo";
-import Socials from "../components/about/socials";
+import CnTopbar from "../components/common/cnTopbar";
+import CnFooter from "../components/common/cnFooter";
+import CnLinksObject from "../components/common/cnLinksObject";
+import CnReleaseList from "../components/common/cnReleaseList";
 import DownloadButton from "../components/common/downloadButton";
 import Skills from "../components/about/skills";
 import Certifications from "../components/about/certifications";
 import Education from "../components/about/education";
-import Works from "../components/homepage/works";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
@@ -17,76 +16,91 @@ import SEO from "../data/seo";
 import "./styles/about.css";
 
 const About = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
-  const currentSEO = SEO.find((item) => item.page === "about");
+	const currentSEO = SEO.find((item) => item.page === "about");
+	const totalReleases = INFO.workHistory.length;
 
-  return (
-    <React.Fragment>
-      <Helmet>
-        <title>{`About | ${INFO.main.title}`}</title>
-        <meta name="description" content={currentSEO.description} />
-        <meta
-          name="keywords"
-          content={currentSEO.keywords.join(", ")}
-        />
-      </Helmet>
+	return (
+		<React.Fragment>
+			<Helmet>
+				<title>{`About | ${INFO.main.title}`}</title>
+				<meta name="description" content={currentSEO.description} />
+				<meta
+					name="keywords"
+					content={currentSEO.keywords.join(", ")}
+				/>
+			</Helmet>
 
-      <div className="page-content">
-        <NavBar active="about" />
-        <div className="content-wrapper">
-          <div className="about-logo-container">
-            <div className="about-logo">
-              <Logo width={46} />
-            </div>
-          </div>
+			<div className="cn-page">
+				<CnTopbar active="about" />
 
-          <div className="about-container">
-            <div className="about-main">
-              <div className="about-right-side">
-                <div className="title about-title">
-                  {INFO.about.title}
-                </div>
+				<main className="cn-wrap">
+					<section className="cn-hero">
+						<div className="cn-hero-grid">
+							<div className="cn-hero-main">
+								<div className="cn-eyebrow-row cn-reveal cn-r1">
+									<span className="cn-eyebrow">
+										README.md
+									</span>
+								</div>
 
-                <div className="about-download">
-                  <DownloadButton />
-                </div>
+								<h1 className="cn-headline cn-reveal cn-r2">
+									{INFO.about.title}
+								</h1>
 
-                <div className="subtitle about-subtitle">
-                  {INFO.about.description}
-                </div>
-              </div>
+								<p className="cn-lede cn-reveal cn-r3">
+									{INFO.about.description}
+								</p>
 
-              <div className="about-left-side">
-                <div className="about-socials">
-                  <Socials />
-                </div>
-              </div>
-            </div>
-            <div className="about-main">
-              <div className="homepage-after-title">
-                <Works />
-              </div>
-            </div>
-            <div className="about-skills-experience">
-              <Certifications certifications={INFO.certifications} />
-              <Skills skills={INFO.skills} />
-              <Education education={INFO.education} />
-            </div>
+								<div className="cn-about-download cn-reveal cn-r4">
+									<DownloadButton />
+								</div>
+							</div>
 
-            <div className="about-socials-mobile">
-              <Socials />
-            </div>
-          </div>
-          <div className="page-footer">
-            <Footer />
-          </div>
-        </div>
-      </div>
-    </React.Fragment>
-  );
+							<div className="cn-hero-side cn-reveal cn-r5">
+								<CnLinksObject />
+							</div>
+						</div>
+					</section>
+
+					<section aria-labelledby="cn-releases-head">
+						<div className="cn-section-head">
+							<span className="cn-eyebrow" id="cn-releases-head">
+								Release History
+							</span>
+							<span className="cn-section-note">
+								{totalReleases} releases since 2013
+							</span>
+						</div>
+						<CnReleaseList />
+					</section>
+
+					<section aria-labelledby="cn-about-panels-head">
+						<div className="cn-section-head">
+							<span
+								className="cn-eyebrow"
+								id="cn-about-panels-head"
+							>
+								Specs
+							</span>
+						</div>
+						<div className="cn-panels">
+							<Skills skills={INFO.skills} />
+							<Certifications
+								certifications={INFO.certifications}
+							/>
+							<Education education={INFO.education} />
+						</div>
+					</section>
+				</main>
+
+				<CnFooter />
+			</div>
+		</React.Fragment>
+	);
 };
 
 export default About;
