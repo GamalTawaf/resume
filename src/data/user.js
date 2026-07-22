@@ -183,6 +183,12 @@ const INFO = {
 
 	certifications: [
 		{
+			name: "Hugging Face AI Agents Course — Certificate of Excellence",
+			issuer: "Hugging Face",
+			date: "2026",
+			link: "https://huggingface.co/learn/agents-course",
+		},
+		{
 			name: "Google Cloud Certified Solutions Architect Professional",
 			issuer: "Google Cloud",
 			date: "2025 - 2027",
