@@ -186,7 +186,7 @@ const INFO = {
 			name: "Hugging Face AI Agents Course — Certificate of Excellence",
 			issuer: "Hugging Face",
 			date: "2026",
-			link: "https://huggingface.co/learn/agents-course",
+			link: "https://gamaltawaf.github.io/resume/hf-agents-course-certificate.png",
 		},
 		{
 			name: "Google Cloud Certified Solutions Architect Professional",
