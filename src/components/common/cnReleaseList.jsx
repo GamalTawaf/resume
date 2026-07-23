@@ -26,6 +26,18 @@ const CnReleaseList = ({ limit }) => {
 							<div className="cn-release-main">
 								<div className="cn-company">{role.company}</div>
 								<div className="cn-role">{role.role}</div>
+								{role.note && (
+									<div className="cn-release-note">
+										{role.note}
+									</div>
+								)}
+								{role.highlights && (
+									<ul className="cn-release-highlights">
+										{role.highlights.map((highlight) => (
+											<li key={highlight}>{highlight}</li>
+										))}
+									</ul>
+								)}
 							</div>
 							<span className="cn-when">
 								{role.duration.replace(" - ", " — ")}

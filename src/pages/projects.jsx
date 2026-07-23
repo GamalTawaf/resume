@@ -39,7 +39,7 @@ const Projects = () => {
 							</span>
 						</div>
 						<h1 className="cn-headline cn-reveal cn-r2">
-							Some projects I built to learn languages or concepts
+							Selected builds — AI agents, apps, and experiments
 						</h1>
 						<p className="cn-lede cn-reveal cn-r3">
 							{INFO.about.description}
