@@ -43,8 +43,8 @@ const VibeCoding = () => {
 						<p className="cn-lede cn-reveal cn-r3">
 							AI speeds up delivery, but it confidently repeats
 							patterns without verifying them. These are the
-							practices I use to get senior-quality output from
-							an LLM in the loop — learned the hard way while
+							practices I use to get senior-quality output from an
+							LLM in the loop — learned the hard way while
 							building a multi-agent system.
 						</p>
 					</section>
