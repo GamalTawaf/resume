@@ -35,6 +35,13 @@ const SEO = [
 	},
 
 	{
+		page: "vibe-coding",
+		description:
+			"Real lessons learned building an AI agent with an LLM in the loop: where the fast path broke, and what fixed it.",
+		keywords: ["Gamal", "Tawaf", "Gamal Tawaf", "Vibe Coding", "AI Agents"],
+	},
+
+	{
 		page: "contact",
 		description:
 			"If you're interested in collaborating on a project, feel free to reach out to me. I'm always open to new ideas and opportunities.",

@@ -3,14 +3,12 @@ import { Helmet } from "react-helmet-async";
 
 import CnTopbar from "../components/common/cnTopbar";
 import CnFooter from "../components/common/cnFooter";
+import CnBuildList from "../components/common/cnBuildList";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
 
 import "./styles/projects.css";
-
-const stripProtocol = (url) =>
-	url.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
 const Games = () => {
 	useEffect(() => {
@@ -57,36 +55,7 @@ const Games = () => {
 							</span>
 						</div>
 
-						<div className="cn-builds">
-							{INFO.games.map((game) => (
-								<div className="cn-build" key={game.title}>
-									<div className="cn-build-head">
-										<span className="cn-build-name">
-											{game.title}
-										</span>
-										<span className="cn-build-tag">
-											{game.tag}
-										</span>
-									</div>
-									<p className="cn-build-desc">
-										{game.description}
-									</p>
-									{!game.comingSoon && (
-										<div className="cn-build-run">
-											<span className="cn-prompt">$</span>{" "}
-											open{" "}
-											<a
-												href={game.link}
-												target="_blank"
-												rel="noreferrer"
-											>
-												{stripProtocol(game.link)} →
-											</a>
-										</div>
-									)}
-								</div>
-							))}
-						</div>
+						<CnBuildList items={INFO.games} />
 					</section>
 				</main>
 

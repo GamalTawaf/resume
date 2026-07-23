@@ -5,14 +5,12 @@ import CnTopbar from "../components/common/cnTopbar";
 import CnFooter from "../components/common/cnFooter";
 import CnLinksObject from "../components/common/cnLinksObject";
 import CnReleaseList from "../components/common/cnReleaseList";
+import CnBuildList from "../components/common/cnBuildList";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
 
 import "./styles/homepage.css";
-
-const stripProtocol = (url) =>
-	url.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
 const Homepage = () => {
 	useEffect(() => {
@@ -95,34 +93,7 @@ const Homepage = () => {
 							</span>
 						</div>
 
-						<div className="cn-builds">
-							{INFO.projects.map((project) => (
-								<div className="cn-build" key={project.title}>
-									<div className="cn-build-head">
-										<span className="cn-build-name">
-											{project.title}
-										</span>
-										<span className="cn-build-tag">
-											{project.tag}
-										</span>
-									</div>
-									<p className="cn-build-desc">
-										{project.description}
-									</p>
-									<div className="cn-build-run">
-										<span className="cn-prompt">$</span>{" "}
-										open{" "}
-										<a
-											href={project.link}
-											target="_blank"
-											rel="noreferrer"
-										>
-											{stripProtocol(project.link)} →
-										</a>
-									</div>
-								</div>
-							))}
-						</div>
+						<CnBuildList items={INFO.projects} />
 					</section>
 				</main>
 
