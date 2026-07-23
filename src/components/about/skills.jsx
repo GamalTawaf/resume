@@ -1,10 +1,11 @@
 import React from "react";
 
 const CATEGORIES = [
-	{ key: "languages", label: "Languages" },
-	{ key: "frameworks", label: "Frameworks" },
-	{ key: "cloud", label: "Cloud & Infrastructure" },
-	{ key: "tools", label: "Tools & Methods" },
+	{ key: "backend", label: "Backend" },
+	{ key: "cloud", label: "Cloud & Architecture" },
+	{ key: "data", label: "Data & Real-Time" },
+	{ key: "delivery", label: "Observability & Delivery" },
+	{ key: "ai", label: "AI Engineering" },
 ];
 
 const Skills = ({ skills }) => {

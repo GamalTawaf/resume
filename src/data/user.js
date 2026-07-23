@@ -10,31 +10,22 @@ const INFO = {
         linkedin: "https://www.linkedin.com/in/gamaltawaf/",
         stackoverflow: "https://stackoverflow.com/users/2161866/gamal-tawaf",
         google_certified:
-            "https://www.credly.com/badges/31e81f74-ded9-43d6-b602-7ec7a3a486fc/linked_in?t=t30g4u",
+            "https://www.credly.com/badges/31e81f74-ded9-43d6-b602-7ec7a3a486fc",
     },
 
     homepage: {
-        title: "Certified Solutions Architect and Senior Software Engineer.",
+        title: "Senior Software Engineer & Google Cloud Certified Professional Cloud Architect.",
         description:
-            "I am a certified Solutions Architect and experienced software engineer with over 10 years of experience in designing, developing, and implementing software solutions across various industries. My expertise lies in full-stack development, cloud computing, and agile methodologies. I thrive in collaborative environments and am committed to delivering high-quality, scalable software that meets client needs.",
+            "12+ years building mission-critical, high-reliability backend systems — global MasterCard issuance at Binance, financial-services platforms at Fiserv, and consumer platforms serving 10M+ users at 99.9% uptime. Deep expertise in Python, distributed systems, observability, and GCP cloud architecture. Proven technical lead who has hired and grown engineering teams and repeatedly turned months-long integration work into weeks.",
     },
 
     about: {
         title: "I'm Gamal Tawaf",
         description:
-            "I've worked on a variety of projects over the years and I'm proud of the progress I've made. I have fully designed and managed systems on Google Cloud Platform (GCP) mainly in Python and Laravel PHP, but I have also worked with Ruby on Rails, Java Spring Boot, Vue.js, Node.js, React. I have had the pleasure of working with Docker and containerization. I'm building my portfolio while learning new technologies on the way.",
+            "I build backend systems that have to stay up: payment-partner integrations at Binance, financial-services platforms at Fiserv, and enterprise systems on Google Cloud Platform. Mainly Python (FastAPI, Flask, Django), with production experience in Java/Spring Boot, PHP/Laravel, Ruby on Rails, and React. I've led teams, owned architecture end-to-end, and lately I've been building AI systems — RAG pipelines, multi-agent workflows, and compliance tooling on Vertex AI.",
     },
 
     projects: [
-        {
-            title: "To-do Application",
-            description:
-                "A React-based task management application built with TypeScript. Features include task creation, completion tracking, and data persistence. Demonstrates modern React practices, TypeScript integration, and responsive design principles.",
-            logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/typescript/typescript.png",
-            tag: "TypeScript",
-            linkText: "View Project",
-            link: "https://gamaltawaf.github.io/to-do/",
-        },
         {
             title: "GAIA Multi-Agent (HF AI Agents Course)",
             description:
@@ -45,11 +36,20 @@ const INFO = {
             link: "https://huggingface.co/spaces/GamalTawaf/Final_Assignment_Template",
         },
         {
+            title: "To-do Application",
+            description:
+                "A React-based task management application built with TypeScript. Features include task creation, completion tracking, and data persistence. Demonstrates modern React practices, TypeScript integration, and responsive design principles.",
+            logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/typescript/typescript.png",
+            tag: "TypeScript",
+            linkText: "View Project",
+            link: "https://gamaltawaf.github.io/to-do/",
+        },
+        {
             title: "Game Center",
             description:
-                "A collection of small games I've built to learn new languages and frameworks, from a React trivia quiz to a Rust/WebAssembly arcade game.",
+                "Just-for-fun builds: small games written to learn new languages and frameworks, from a React trivia quiz to a Rust/WebAssembly arcade game.",
             logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/rust/rust.png",
-            tag: "Games",
+            tag: "For Fun",
             linkText: "View Games",
             link: "/games",
             internal: true,
@@ -97,111 +97,130 @@ const INFO = {
 
     workHistory: [
         {
-            company: "Fiserv",
+            company: "Fiserv (via Ascendion)",
             role: "Senior Software Engineer",
             duration: "Jan 2026 - Present",
+            note: "Contract engagement through Dec 2026",
+            highlights: [
+                "Introduced OpenTelemetry distributed tracing across 24 microservices, cutting production issue diagnosis time by 80%.",
+                "Re-architected vendor integration across 5 microservices into a configuration-driven design — new-vendor onboarding went from ~2 months of code changes to ~2 weeks of configuration.",
+            ],
         },
         {
             company: "Inkeros",
             role: "Solution Architect / Engineering Team Lead",
             duration: "Jan 2025 - Jan 2026",
+            highlights: [
+                "Recruited and led the full engineering team while owning architecture for a mission-critical enterprise portal (Python/Django on GCP) serving 250+ staff.",
+                "Designed an AI compliance system analyzing call-center audio with Gemini and Vertex AI; ran the platform at 99.9% uptime with one-click CI/CD at a 99.8% success rate.",
+            ],
         },
         {
             company: "PERCS",
             role: "Senior Software Engineer",
             duration: "Apr 2024 - Jan 2025",
+            note: "Startup — role eliminated in layoffs; company ceased operations in 2025",
+            highlights: [
+                "Scaled full-stack platform features through rapid user growth and launched Web3 games on Warpcast Frames during the protocol's early growth stage.",
+            ],
         },
         {
-            company: "UFT",
+            company: "University of Toronto (via Tundra)",
             role: "Senior Software Engineer (Contract)",
             duration: "Jan 2024 - Apr 2024",
+            highlights: [
+                "Delivered a fixed-scope modernization: Laravel v8 to v10 upgrade with unit testing introduced to 90% coverage.",
+            ],
         },
         {
             company: "Binance - Card & Pay",
             role: "Senior Software Engineer",
             duration: "Jul 2022 - Jul 2023",
+            note: "Role impacted by 2023 global workforce reduction",
+            highlights: [
+                "Integrated 3 global payment partners' REST APIs to enable MasterCard issuance across Europe, the Middle East, and South America.",
+                "Migrated the card-ordering service from Laravel to Java/Spring Boot, cutting new payment-partner onboarding from ~3 months to ~1 week.",
+            ],
         },
         {
             company: "VerticalScope Inc.",
             role: "Senior Web Engineer",
             duration: "Jul 2021 - Jun 2022",
+            highlights: [
+                "Shipped features for community platforms serving 10M+ users and launched the platform's first marketplace product — a zero-to-one build and new revenue stream.",
+            ],
         },
         {
-            company: "Afilias",
-            role: "Team Lead / Senior Software Engineer",
+            company: "Afilias Canada",
+            role: "Team Lead / Senior Software Developer",
             duration: "Feb 2016 - Jul 2021",
+            highlights: [
+                "Led the in-house migration of a business-critical Rails app off a third-party vendor (Rails v3→v5, MySQL→PostgreSQL in 6 months), delivering $500K in annual savings.",
+                "Hired, trained, and led a team of 5–7 developers over 5+ years, growing engineers from junior to senior.",
+            ],
         },
         {
-            company: "BlockX Labs",
-            role: "Technologist in Residence",
-            duration: "Nov 2017 - Mar 2018",
-        },
-        {
-            company: "API Garage",
-            role: "Application Developer",
-            duration: "Jun 2015 - Jun 2016",
-        },
-        {
-            company: "Carlton Group Ltd.",
-            role: "Application Developer",
-            duration: "Oct 2014 - Jan 2016",
-        },
-        {
-            company: "CareerPal.co",
-            role: "PHP Web Developer (Contract)",
-            duration: "Jun 2014 - Oct 2014",
-        },
-        {
-            company: "Pavr Labs",
-            role: "PHP Web Developer",
-            duration: "Mar 2013 - Apr 2014",
+            company: "Carlton Group · Golf Canada · PAVR Labs",
+            role: "Application Developer — earlier roles",
+            duration: "Mar 2013 - Jan 2016",
         },
     ],
 
     skills: {
-        languages: [
-            "Python",
-            "PHP",
-            "JavaScript",
-            "TypeScript",
-            "Ruby",
-            "Java",
-        ],
-        frameworks: [
-            "Laravel",
-            "React",
-            "Vue.js",
-            "Spring Boot",
-            "Ruby on Rails",
-            "Node.js",
+        backend: [
+            "Python (12+ yrs)",
+            "FastAPI",
+            "Flask",
+            "Django",
+            "asyncio",
+            "Java / Spring Boot",
+            "REST & gRPC API design",
         ],
         cloud: [
             "Google Cloud Platform",
-            "Docker",
+            "Cloud Run",
+            "Pub/Sub",
             "Kubernetes",
+            "Docker",
+            "Terraform",
             "Microservices",
         ],
-        tools: [
-            "Git",
-            "CI/CD",
-            "Agile Methodologies",
-            "Test-Driven Development",
-            "RESTful APIs",
+        data: [
+            "PostgreSQL",
+            "MySQL",
+            "Redis",
+            "BigQuery",
+            "Real-time event pipelines",
+        ],
+        delivery: [
+            "OpenTelemetry",
+            "Monitoring & Alerting",
+            "GitHub Actions",
+            "GitLab CI/CD",
+            "pytest",
+            "JUnit",
+        ],
+        ai: [
+            "Vertex AI",
+            "Gemini",
+            "LangChain",
+            "LangGraph",
+            "RAG systems",
         ],
     },
 
     certifications: [
         {
-            name: "Hugging Face AI Agents Course — Certificate of Excellence",
-            issuer: "Hugging Face",
-            date: "2026",
-            link: "https://gamaltawaf.github.io/resume/hf-agents-course-certificate.png",
-        },
-        {
-            name: "Google Cloud Certified Solutions Architect Professional",
+            name: "Google Cloud Professional Cloud Architect",
             issuer: "Google Cloud",
             date: "2025 - 2027",
             link: "https://www.credly.com/badges/31e81f74-ded9-43d6-b602-7ec7a3a486fc",
+        },
+        {
+            name: "Hugging Face AI Agents Course — Certificate of Excellence",
+            issuer: "Hugging Face",
+            date: "Jul 2026",
+            link: "https://gamaltawaf.github.io/resume/hf-agents-course-certificate.png",
         },
     ],
 

@@ -6,7 +6,7 @@ const NAV_ITEMS = [
 	{ key: "about", label: "About", to: "/about" },
 	{ key: "projects", label: "Projects", to: "/projects" },
 	{ key: "games", label: "Games", to: "/games" },
-	{ key: "vibe-coding", label: "Vibe Coding", to: "/vibe-coding" },
+	{ key: "vibe-coding", label: "AI Playbook", to: "/vibe-coding" },
 	{ key: "contact", label: "Contact", to: "/contact" },
 ];
 

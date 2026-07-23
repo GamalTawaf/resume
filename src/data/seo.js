@@ -2,29 +2,30 @@ const SEO = [
 	{
 		page: "home",
 		description:
-			"I am a certified Google Cloud Solutions Architect and Senior Software Engineer with over 10 years of experience designing, building, and leading delivery of scalable, secure enterprise platforms.",
+			"Senior Software Engineer and Google Cloud Certified Professional Cloud Architect with 12+ years building mission-critical backend systems — payments, fintech platforms, and consumer products serving 10M+ users.",
 		keywords: [
 			"Gamal",
 			"Tawaf",
 			"Gamal Tawaf",
-			"Laravel",
-			"Ruby on Rails",
-			"Spring boot",
+			"Python",
+			"Google Cloud",
+			"Spring Boot",
+			"Distributed Systems",
 		],
 	},
 
 	{
 		page: "about",
 		description:
-			"I am a certified Google Cloud Solutions Architect and Senior Software Engineer with over 10 years of experience designing, building, and leading delivery of scalable, secure enterprise platforms.",
+			"Senior Software Engineer and Google Cloud Certified Professional Cloud Architect with 12+ years building mission-critical backend systems in Python, Java, and GCP.",
 		keywords: ["Gamal", "Tawaf", "Gamal Tawaf"],
 	},
 
 	{
 		page: "projects",
 		description:
-			"I've worked on a variety of projects over the years and I'm proud of the progress I've made. Many of these projects are open-source and available for others to explore and contribute to.",
-		keywords: ["Gamal", "Tawaf", "Gamal Tawaf"],
+			"Selected builds: a LangGraph multi-agent system for the GAIA benchmark, TypeScript apps, and experiments in Rust, Svelte, and WebAssembly.",
+		keywords: ["Gamal", "Tawaf", "Gamal Tawaf", "LangGraph", "AI Agents"],
 	},
 
 	{
@@ -37,8 +38,14 @@ const SEO = [
 	{
 		page: "vibe-coding",
 		description:
-			"Real lessons learned building an AI agent with an LLM in the loop: where the fast path broke, and what fixed it.",
-		keywords: ["Gamal", "Tawaf", "Gamal Tawaf", "Vibe Coding", "AI Agents"],
+			"AI-assisted engineering practices that actually work: real lessons from building a multi-agent system with an LLM in the loop.",
+		keywords: [
+			"Gamal",
+			"Tawaf",
+			"Gamal Tawaf",
+			"AI-Assisted Engineering",
+			"AI Agents",
+		],
 	},
 
 	{

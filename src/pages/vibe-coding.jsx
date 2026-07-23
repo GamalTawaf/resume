@@ -19,7 +19,7 @@ const VibeCoding = () => {
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title>{`Vibe Coding | ${INFO.main.title}`}</title>
+				<title>{`AI Playbook | ${INFO.main.title}`}</title>
 				<meta name="description" content={currentSEO.description} />
 				<meta
 					name="keywords"
@@ -38,11 +38,14 @@ const VibeCoding = () => {
 							</span>
 						</div>
 						<h1 className="cn-headline cn-reveal cn-r2">
-							Vibe coding lessons learned
+							AI-assisted engineering: what actually works
 						</h1>
 						<p className="cn-lede cn-reveal cn-r3">
-							AI will speed up the coding process but it is like a toddler it repeats what it has learned without actually checking it.
-							I will show you some lessons I learned from coding with AI and how to avoid the mistakes I made.
+							AI speeds up delivery, but it confidently repeats
+							patterns without verifying them. These are the
+							practices I use to get senior-quality output from
+							an LLM in the loop — learned the hard way while
+							building a multi-agent system.
 						</p>
 					</section>
 

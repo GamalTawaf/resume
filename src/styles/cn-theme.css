@@ -362,6 +362,26 @@
 	margin-top: 2px;
 }
 
+.cn-release-main .cn-release-note {
+	color: var(--paper-dim);
+	font-size: 0.78rem;
+	font-style: italic;
+	margin-top: 2px;
+	opacity: 0.7;
+}
+
+.cn-release-main .cn-release-highlights {
+	margin: 8px 0 0;
+	padding-left: 18px;
+	color: var(--paper-dim);
+	font-size: 0.85rem;
+	line-height: 1.5;
+}
+
+.cn-release-main .cn-release-highlights li + li {
+	margin-top: 4px;
+}
+
 .cn-release .cn-when {
 	font-family: var(--mono);
 	font-size: 0.8rem;
