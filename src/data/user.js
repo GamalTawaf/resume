@@ -174,7 +174,7 @@ const INFO = {
 			"Django",
 			"asyncio",
 			"Java / Spring Boot",
-			"REST & gRPC API design",
+			"REST API design",
 		],
 		cloud: [
 			"Google Cloud Platform",
