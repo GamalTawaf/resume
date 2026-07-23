@@ -29,7 +29,7 @@ const INFO = {
 		{
 			title: "GAIA Multi-Agent (HF AI Agents Course)",
 			description:
-				"A LangGraph supervisor + specialist multi-agent system built for the Hugging Face AI Agents Course final assignment. Routes GAIA benchmark questions to web-research, code/math, and file/vision workers to earn the course's Certificate of Excellence.",
+				"A LangGraph supervisor + specialist multi-agent system built for the Hugging Face AI Agents Course final assignment. Routes GAIA benchmark questions to web-research, code/math, and file/vision workers.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
 			tag: "LangGraph",
 			linkText: "View Space",
@@ -211,7 +211,7 @@ const INFO = {
 			link: "https://www.credly.com/badges/31e81f74-ded9-43d6-b602-7ec7a3a486fc",
 		},
 		{
-			name: "Hugging Face AI Agents Course — Certificate of Excellence",
+			name: "Hugging Face AI Agents Course",
 			issuer: "Hugging Face",
 			date: "Jul 2026",
 			link: "https://gamaltawaf.github.io/resume/hf-agents-course-certificate.png",
