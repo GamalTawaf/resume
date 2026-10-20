@@ -16,13 +16,13 @@ const INFO = {
 	homepage: {
 		title: "Senior Software Engineer & Google Cloud Certified Professional Cloud Architect.",
 		description:
-			"12+ years building mission-critical, high-reliability backend systems — global MasterCard issuance at Binance, financial-services platforms at Fiserv, and consumer platforms serving 10M+ users at 99.9% uptime. Deep expertise in distributed systems, observability, and GCP cloud architecture, working primarily in Python today after a decade across PHP, Ruby, and Java. Proven technical lead who has hired and grown engineering teams and repeatedly turned months-long integration work into weeks.",
+			"12+ years building mission-critical, high-reliability backend systems — payments at Truss, financial-services platforms at Fiserv, global MasterCard issuance at Binance, and consumer platforms serving 10M+ users at 99.9% uptime. Deep expertise in distributed systems, observability, and GCP cloud architecture, working primarily in Python today after a decade across PHP, Ruby, and Java. Proven technical lead who has hired and grown engineering teams and repeatedly turned months-long integration work into weeks.",
 	},
 
 	about: {
 		title: "I'm Gamal Tawaf",
 		description:
-			"I build backend systems that have to stay up: payment-partner integrations at Binance, financial-services platforms at Fiserv, and enterprise systems on Google Cloud Platform. Mainly Python (FastAPI, Flask, Django), with production experience in Java/Spring Boot, PHP/Laravel, Ruby on Rails, and React. I've led teams, owned architecture end-to-end, and lately I've been building AI systems — RAG pipelines, multi-agent workflows, and compliance tooling on Vertex AI.",
+			"I build backend systems that have to stay up: payments at Truss, financial-services platforms at Fiserv, payment-partner integrations at Binance, and enterprise systems on Google Cloud Platform. Mainly Python (FastAPI, Flask, Django), with production experience in Java/Spring Boot, PHP/Laravel, Ruby on Rails, and React. I've led teams, owned architecture end-to-end, and lately I've been building AI systems — RAG pipelines, multi-agent workflows, and compliance tooling on Vertex AI.",
 	},
 
 	projects: [
@@ -97,10 +97,18 @@ const INFO = {
 
 	workHistory: [
 		{
+			company: "Truss Payments",
+			role: "Senior Software Engineer",
+			duration: "Aug 2026 - Oct 2026",
+			highlights: [
+				"Cut local setup for new engineers to under an hour by introducing a Docker-based development environment, and set the team rules for agent-written code.",
+				"Proposed a GCP infrastructure plan estimated to cut the cloud bill by 50%, audited the cloud setup for compliance, and took on-call for production payment issues.",
+			],
+		},
+		{
 			company: "Fiserv (via Ascendion)",
 			role: "Senior Software Engineer",
-			duration: "Jan 2026 - Present",
-			note: "Contract engagement through Dec 2026",
+			duration: "Jan 2026 - Aug 2026",
 			highlights: [
 				"Introduced OpenTelemetry distributed tracing across 24 microservices, cutting production issue diagnosis time by 80%.",
 				"Re-architected vendor integration across 5 microservices into a configuration-driven design — new-vendor onboarding went from ~2 months of code changes to ~2 weeks of configuration.",
