@@ -13,24 +13,32 @@ const NAV_ITEMS = [
 const CnTopbar = ({ active }) => {
 	return (
 		<div className="cn-topbar">
+			<a className="cn-skip" href="#content">
+				Skip to content
+			</a>
 			<div className="cn-wrap cn-topbar-inner">
 				<div className="cn-brand">
 					<strong>gamaltawaf</strong> / resume
 				</div>
-				<ul className="cn-nav-links">
-					{NAV_ITEMS.map((item) => (
-						<li key={item.key}>
-							<Link
-								to={item.to}
-								className={
-									active === item.key ? "cn-current" : ""
-								}
-							>
-								{item.label}
-							</Link>
-						</li>
-					))}
-				</ul>
+				<nav aria-label="Primary">
+					<ul className="cn-nav-links">
+						{NAV_ITEMS.map((item) => (
+							<li key={item.key}>
+								<Link
+									to={item.to}
+									className={
+										active === item.key ? "cn-current" : ""
+									}
+									aria-current={
+										active === item.key ? "page" : undefined
+									}
+								>
+									{item.label}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</nav>
 			</div>
 		</div>
 	);

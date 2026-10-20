@@ -31,7 +31,7 @@ const Projects = () => {
 			<div className="cn-page">
 				<CnTopbar active="projects" />
 
-				<main className="cn-wrap">
+				<main className="cn-wrap" id="content">
 					<section className="cn-hero cn-hero-lite">
 						<div className="cn-eyebrow-row cn-reveal cn-r1">
 							<span className="cn-eyebrow">
@@ -42,15 +42,16 @@ const Projects = () => {
 							Selected builds — AI agents, apps, and experiments
 						</h1>
 						<p className="cn-lede cn-reveal cn-r3">
-							{INFO.about.description}
+							A LangGraph agent, a TypeScript app, and a few
+							games built to learn the tools.
 						</p>
 					</section>
 
 					<section aria-labelledby="cn-repos-head">
 						<div className="cn-section-head">
-							<span className="cn-eyebrow" id="cn-repos-head">
+							<h2 className="cn-eyebrow" id="cn-repos-head">
 								Repositories
-							</span>
+							</h2>
 							<span className="cn-section-note">
 								{INFO.projects.length} published
 							</span>

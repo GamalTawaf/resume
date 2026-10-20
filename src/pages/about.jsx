@@ -37,7 +37,7 @@ const About = () => {
 			<div className="cn-page">
 				<CnTopbar active="about" />
 
-				<main className="cn-wrap">
+				<main className="cn-wrap" id="content">
 					<section className="cn-hero">
 						<div className="cn-hero-grid">
 							<div className="cn-hero-main">
@@ -68,9 +68,9 @@ const About = () => {
 
 					<section aria-labelledby="cn-releases-head">
 						<div className="cn-section-head">
-							<span className="cn-eyebrow" id="cn-releases-head">
+							<h2 className="cn-eyebrow" id="cn-releases-head">
 								Release History
-							</span>
+							</h2>
 							<span className="cn-section-note">
 								{totalReleases} releases since 2013
 							</span>
@@ -80,12 +80,12 @@ const About = () => {
 
 					<section aria-labelledby="cn-about-panels-head">
 						<div className="cn-section-head">
-							<span
+							<h2
 								className="cn-eyebrow"
 								id="cn-about-panels-head"
 							>
 								Specs
-							</span>
+							</h2>
 						</div>
 						<div className="cn-panels">
 							<Skills skills={INFO.skills} />

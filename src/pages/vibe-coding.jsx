@@ -30,7 +30,7 @@ const VibeCoding = () => {
 			<div className="cn-page">
 				<CnTopbar active="vibe-coding" />
 
-				<main className="cn-wrap">
+				<main className="cn-wrap" id="content">
 					<section className="cn-hero cn-hero-lite">
 						<div className="cn-eyebrow-row cn-reveal cn-r1">
 							<span className="cn-eyebrow">
@@ -51,9 +51,9 @@ const VibeCoding = () => {
 
 					<section aria-labelledby="cn-lessons-head">
 						<div className="cn-section-head">
-							<span className="cn-eyebrow" id="cn-lessons-head">
+							<h2 className="cn-eyebrow" id="cn-lessons-head">
 								Lessons
-							</span>
+							</h2>
 							<span className="cn-section-note">
 								{INFO.vibeCodingLessons.length} learned
 							</span>

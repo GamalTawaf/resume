@@ -2,6 +2,10 @@
 	margin-top: 0;
 }
 
+.cn-hero-grid > * {
+	min-width: 0;
+}
+
 @media (min-width: 900px) {
 	.cn-hero-side {
 		margin-top: 96px;
