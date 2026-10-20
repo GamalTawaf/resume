@@ -31,7 +31,7 @@ const Games = () => {
 			<div className="cn-page">
 				<CnTopbar active="games" />
 
-				<main className="cn-wrap">
+				<main className="cn-wrap" id="content">
 					<section className="cn-hero cn-hero-lite">
 						<div className="cn-eyebrow-row cn-reveal cn-r1">
 							<span className="cn-eyebrow">$ ls ~/games</span>
@@ -47,9 +47,9 @@ const Games = () => {
 
 					<section aria-labelledby="cn-games-head">
 						<div className="cn-section-head">
-							<span className="cn-eyebrow" id="cn-games-head">
+							<h2 className="cn-eyebrow" id="cn-games-head">
 								Games
-							</span>
+							</h2>
 							<span className="cn-section-note">
 								{INFO.games.length} listed
 							</span>

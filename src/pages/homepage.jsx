@@ -6,6 +6,7 @@ import CnFooter from "../components/common/cnFooter";
 import CnLinksObject from "../components/common/cnLinksObject";
 import CnReleaseList from "../components/common/cnReleaseList";
 import CnBuildList from "../components/common/cnBuildList";
+import DownloadButton from "../components/common/downloadButton";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
@@ -34,7 +35,7 @@ const Homepage = () => {
 			<div className="cn-page">
 				<CnTopbar active="home" />
 
-				<main className="cn-wrap">
+				<main className="cn-wrap" id="content">
 					<section className="cn-hero">
 						<div className="cn-hero-grid">
 							<div className="cn-hero-main">
@@ -63,6 +64,10 @@ const Homepage = () => {
 								<p className="cn-lede cn-reveal cn-r4">
 									{INFO.homepage.description}
 								</p>
+
+								<div className="cn-hero-action cn-reveal cn-r4">
+									<DownloadButton />
+								</div>
 							</div>
 
 							<div className="cn-hero-side cn-reveal cn-r5">
@@ -73,9 +78,9 @@ const Homepage = () => {
 
 					<section aria-labelledby="cn-releases-head">
 						<div className="cn-section-head">
-							<span className="cn-eyebrow" id="cn-releases-head">
+							<h2 className="cn-eyebrow" id="cn-releases-head">
 								Release History
-							</span>
+							</h2>
 							<span className="cn-section-note">
 								{totalReleases} releases since 2013
 							</span>
@@ -85,9 +90,9 @@ const Homepage = () => {
 
 					<section aria-labelledby="cn-builds-head">
 						<div className="cn-section-head">
-							<span className="cn-eyebrow" id="cn-builds-head">
+							<h2 className="cn-eyebrow" id="cn-builds-head">
 								Featured Builds
-							</span>
+							</h2>
 							<span className="cn-section-note">
 								{INFO.projects.length} published
 							</span>

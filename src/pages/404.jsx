@@ -18,7 +18,7 @@ const Notfound = () => {
 			<div className="cn-page">
 				<CnTopbar />
 
-				<main className="cn-wrap cn-notfound-main">
+				<main className="cn-wrap cn-notfound-main" id="content">
 					<div className="cn-eyebrow-row cn-reveal cn-r1">
 						<span className="cn-eyebrow">404.md</span>
 					</div>

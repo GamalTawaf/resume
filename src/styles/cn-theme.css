@@ -10,6 +10,11 @@
   uses it, so there's no light variant to reconcile against.
 */
 
+.cn-page,
+.cn-page * {
+	box-sizing: border-box;
+}
+
 .cn-page {
 	--ink: #0b1b2e;
 	--ink-deep: #081526;
@@ -58,6 +63,27 @@
 	border-radius: 2px;
 }
 
+.cn-skip {
+	position: absolute;
+	left: 12px;
+	top: 8px;
+	z-index: 20;
+	transform: translateY(-150%);
+	background: var(--signal);
+	color: var(--ink);
+	font-family: var(--mono);
+	font-size: 0.85rem;
+	padding: 10px 14px;
+}
+
+.cn-page a.cn-skip {
+	color: var(--ink);
+}
+
+.cn-skip:focus {
+	transform: none;
+}
+
 .cn-mono {
 	font-family: var(--mono);
 }
@@ -83,7 +109,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 18px 0;
+	padding-top: 18px;
+	padding-bottom: 18px;
 	gap: 24px;
 	flex-wrap: wrap;
 	row-gap: 10px;
@@ -113,6 +140,9 @@
 
 .cn-nav-links a {
 	color: var(--slate);
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
 	padding-bottom: 3px;
 	border-bottom: 1px solid transparent;
 	transition: color 0.15s ease, border-color 0.15s ease;
@@ -250,6 +280,8 @@
 	border: 1px solid var(--rule);
 	padding: 20px 22px;
 	width: 100%;
+	min-width: 0;
+	overflow-wrap: anywhere;
 }
 
 .cn-punct {
@@ -274,6 +306,7 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 9px;
+	min-height: 44px;
 	font-family: var(--mono);
 	font-size: 0.85rem;
 	color: var(--ink);
@@ -283,9 +316,18 @@
 	transition: background 0.15s ease, color 0.15s ease;
 }
 
-.cn-btn:hover {
+.cn-page a.cn-btn {
+	color: var(--ink);
+}
+
+.cn-btn:hover,
+.cn-page a.cn-btn:hover {
 	background: transparent;
 	color: var(--signal);
+}
+
+.cn-hero-action {
+	margin-top: 22px;
 }
 
 /* ---------- section shell ---------- */
@@ -304,8 +346,12 @@
 	flex-wrap: wrap;
 }
 
-.cn-section-head .cn-eyebrow {
+.cn-section-head .cn-eyebrow,
+h2.cn-eyebrow {
 	margin: 0;
+	font-size: 0.78rem;
+	font-weight: 400;
+	line-height: 1.4;
 }
 
 .cn-section-note {
@@ -400,13 +446,11 @@
 	font-family: var(--mono);
 	font-size: 0.8rem;
 	color: var(--paper-dim);
-	opacity: 0.55;
 	letter-spacing: 0.02em;
 }
 
 .cn-collapsed-hint a {
 	color: var(--signal);
-	opacity: 1;
 }
 
 /* ---------- builds / repositories grid (used by home + projects) ---------- */
@@ -582,13 +626,17 @@
 
 .cn-foot-links {
 	display: flex;
-	gap: 22px;
+	flex-wrap: wrap;
+	gap: 12px 22px;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
 .cn-foot-links a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
 	color: var(--slate);
 }
 .cn-foot-links a:hover {
@@ -602,5 +650,16 @@
 	}
 	.cn-release .cn-when {
 		text-align: left;
+	}
+	.cn-topbar-inner nav {
+		flex: 1 0 100%;
+		min-width: 0;
+	}
+	.cn-nav-links {
+		flex-wrap: wrap;
+		gap: 0 16px;
+	}
+	.cn-topbar-inner {
+		align-items: flex-start;
 	}
 }

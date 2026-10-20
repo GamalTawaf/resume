@@ -18,6 +18,12 @@ const CnFooter = () => {
 						<Link to="/projects">Projects</Link>
 					</li>
 					<li>
+						<Link to="/games">Games</Link>
+					</li>
+					<li>
+						<Link to="/vibe-coding">AI Playbook</Link>
+					</li>
+					<li>
 						<Link to="/contact">Contact</Link>
 					</li>
 				</ul>

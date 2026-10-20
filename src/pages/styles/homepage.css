@@ -11,6 +11,10 @@
 	gap: 40px;
 }
 
+.cn-hero-grid > * {
+	min-width: 0;
+}
+
 @media (min-width: 900px) {
 	.cn-hero-grid {
 		grid-template-columns: 1.35fr 0.9fr;

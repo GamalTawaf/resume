@@ -31,7 +31,7 @@ const Contact = () => {
 			<div className="cn-page">
 				<CnTopbar active="contact" />
 
-				<main className="cn-wrap">
+				<main className="cn-wrap" id="content">
 					<section className="cn-hero cn-hero-lite">
 						<div className="cn-contact-grid">
 							<div>
