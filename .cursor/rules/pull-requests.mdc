@@ -1,0 +1,26 @@
+---
+description: Never commit or push to main. Land every change through a pull request.
+alwaysApply: true
+---
+
+# Pull requests only
+
+Never work on `main`. Do not commit, push, or merge into `main` from a local checkout.
+
+- Create a branch from the latest `origin/main`.
+- Commit the change on that branch.
+- Push the branch and open a pull request.
+- Wait for the pull request. Do not merge it unless the user asks.
+
+```text
+# Bad
+git checkout main
+git commit
+git push origin main
+
+# Good
+git checkout -b feat/short-name origin/main
+git commit
+git push -u origin HEAD
+gh pr create
+```
