@@ -1,6 +1,5 @@
 .cn-hero-lite {
-	padding: 88px 0 56px;
-	border-top: none;
+	padding-bottom: var(--section);
 }
 
 .cn-hero-lite .cn-headline {

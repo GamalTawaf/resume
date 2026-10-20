@@ -1,14 +1,5 @@
-/* Hero layout specific to the homepage; shared theme lives in src/styles/cn-theme.css */
-
-.cn-hero {
-	padding: 88px 0 72px;
-	border-top: none;
-}
-
-.cn-hero-grid {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 40px;
+.cn-hero-side {
+	margin-top: 0;
 }
 
 .cn-hero-grid > * {
@@ -16,11 +7,6 @@
 }
 
 @media (min-width: 900px) {
-	.cn-hero-grid {
-		grid-template-columns: 1.35fr 0.9fr;
-		align-items: start;
-		gap: 56px;
-	}
 	.cn-hero-side {
 		margin-top: 96px;
 	}
@@ -29,13 +15,12 @@
 .cn-version-row {
 	display: flex;
 	align-items: baseline;
-	gap: 18px;
+	gap: var(--space-18);
 	margin-bottom: 8px;
 	flex-wrap: wrap;
 }
 
 .cn-version-tag {
-	font-family: var(--mono);
 	font-size: 1.05rem;
 	font-weight: 600;
 	color: var(--amber);

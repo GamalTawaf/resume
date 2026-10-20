@@ -8,14 +8,11 @@
   Single dark theme by design: blueprint is inherently a dark-ground
   medium (white linework on blue paper) and every page on the site now
   uses it, so there's no light variant to reconcile against.
+
+  Tokens live on :root so page styles and the scrollbar share one source.
 */
 
-.cn-page,
-.cn-page * {
-	box-sizing: border-box;
-}
-
-.cn-page {
+:root {
 	--ink: #0b1b2e;
 	--ink-deep: #081526;
 	--ink-raised: #0f2439;
@@ -27,12 +24,44 @@
 	--amber: #f5a75a;
 	--rule: rgba(231, 238, 247, 0.14);
 	--rule-faint: rgba(231, 238, 247, 0.06);
+	--topbar: color-mix(in srgb, var(--ink-deep) 72%, transparent);
+	--signal-pulse: color-mix(in srgb, var(--signal) 50%, transparent);
 
 	--mono: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo,
 		Consolas, monospace;
 	--sans: -apple-system, "Segoe UI", ui-sans-serif, Roboto, "Helvetica Neue",
 		Arial, sans-serif;
 
+	--text-xs: 0.72rem;
+	--text-sm: 0.78rem;
+	--text-meta: 0.8rem;
+	--text-ui: 0.85rem;
+	--text-md: 0.88rem;
+	--text-lede: 1.08rem;
+
+	--space-18: 18px;
+	--gutter: 28px;
+	--section: 56px;
+	--hero-top: 88px;
+	--hero-bottom: 72px;
+	--split-gap: 40px;
+	--split-gap-wide: 56px;
+
+	--radius-focus: 2px;
+	--radius-pill: 3px;
+	--ease-state: 0.15s ease;
+
+	--measure: 1120px;
+	--bp-phone: 620px;
+	--bp-split: 900px;
+}
+
+.cn-page,
+.cn-page * {
+	box-sizing: border-box;
+}
+
+.cn-page {
 	color-scheme: dark;
 	background: var(--ink);
 	color: var(--paper);
@@ -60,7 +89,7 @@
 .cn-page button:focus-visible {
 	outline: 2px solid var(--signal);
 	outline-offset: 3px;
-	border-radius: 2px;
+	border-radius: var(--radius-focus);
 }
 
 .cn-skip {
@@ -71,8 +100,7 @@
 	transform: translateY(-150%);
 	background: var(--signal);
 	color: var(--ink);
-	font-family: var(--mono);
-	font-size: 0.85rem;
+	font-size: var(--text-ui);
 	padding: 10px 14px;
 }
 
@@ -84,21 +112,40 @@
 	transform: none;
 }
 
-.cn-mono {
+.cn-mono,
+.cn-skip,
+.cn-brand,
+.cn-nav-links,
+.cn-eyebrow,
+.cn-status-pill,
+.cn-links-object,
+.cn-btn,
+.cn-section-note,
+.cn-release .cn-v,
+.cn-release .cn-when,
+.cn-collapsed-hint,
+.cn-build-tag,
+.cn-build-run,
+.cn-panel-title,
+.cn-tag-group-label,
+.cn-tag,
+.cn-simple-item-meta,
+.cn-foot-inner,
+.cn-version-tag {
 	font-family: var(--mono);
 }
 
 .cn-wrap {
-	max-width: 1120px;
+	max-width: var(--measure);
 	margin: 0 auto;
-	padding: 0 28px;
+	padding: 0 var(--gutter);
 }
 
 /* ---------- nav ---------- */
 
 .cn-topbar {
 	border-bottom: 1px solid var(--rule);
-	background: rgba(8, 21, 38, 0.72);
+	background: var(--topbar);
 	backdrop-filter: blur(6px);
 	position: sticky;
 	top: 0;
@@ -117,8 +164,7 @@
 }
 
 .cn-brand {
-	font-family: var(--mono);
-	font-size: 0.85rem;
+	font-size: var(--text-ui);
 	color: var(--paper-dim);
 	white-space: nowrap;
 }
@@ -130,9 +176,8 @@
 
 .cn-nav-links {
 	display: flex;
-	gap: 28px;
-	font-family: var(--mono);
-	font-size: 0.85rem;
+	gap: var(--gutter);
+	font-size: var(--text-ui);
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -145,7 +190,7 @@
 	min-height: 44px;
 	padding-bottom: 3px;
 	border-bottom: 1px solid transparent;
-	transition: color 0.15s ease, border-color 0.15s ease;
+	transition: color var(--ease-state), border-color var(--ease-state);
 }
 
 .cn-nav-links a:hover,
@@ -201,8 +246,7 @@
 }
 
 .cn-eyebrow {
-	font-family: var(--mono);
-	font-size: 0.78rem;
+	font-size: var(--text-sm);
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
 	color: var(--slate);
@@ -212,13 +256,12 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 7px;
-	font-family: var(--mono);
-	font-size: 0.72rem;
+	font-size: var(--text-xs);
 	letter-spacing: 0.08em;
 	color: var(--signal);
 	border: 1px solid var(--signal-dim);
 	padding: 3px 9px;
-	border-radius: 3px;
+	border-radius: var(--radius-pill);
 }
 
 .cn-dot {
@@ -226,17 +269,17 @@
 	height: 6px;
 	border-radius: 50%;
 	background: var(--signal);
-	box-shadow: 0 0 0 0 rgba(45, 212, 180, 0.6);
+	box-shadow: 0 0 0 0 var(--signal-pulse);
 	animation: cn-pulse 2.2s ease-in-out infinite;
 }
 
 @keyframes cn-pulse {
 	0%,
 	100% {
-		box-shadow: 0 0 0 0 rgba(45, 212, 180, 0.5);
+		box-shadow: 0 0 0 0 var(--signal-pulse);
 	}
 	50% {
-		box-shadow: 0 0 0 5px rgba(45, 212, 180, 0);
+		box-shadow: 0 0 0 5px transparent;
 	}
 }
 
@@ -263,7 +306,7 @@
 }
 
 .cn-lede {
-	font-size: 1.08rem;
+	font-size: var(--text-lede);
 	line-height: 1.75;
 	color: var(--paper-dim);
 	max-width: 58ch;
@@ -273,15 +316,19 @@
 /* ---------- links object (socials rendered as the object literal they come from) ---------- */
 
 .cn-links-object {
-	font-family: var(--mono);
-	font-size: 0.88rem;
+	font-size: var(--text-md);
 	line-height: 1.9;
-	background: var(--ink-raised);
-	border: 1px solid var(--rule);
 	padding: 20px 22px;
 	width: 100%;
 	min-width: 0;
 	overflow-wrap: anywhere;
+}
+
+.cn-links-object,
+.cn-build,
+.cn-panel {
+	background: var(--ink-raised);
+	border: 1px solid var(--rule);
 }
 
 .cn-punct {
@@ -291,12 +338,18 @@
 	color: var(--paper-dim);
 }
 
-.cn-links-object a {
+.cn-links-object a,
+.cn-page a.cn-contact-email-link {
 	color: var(--signal);
 	border-bottom: 1px solid transparent;
 }
 
-.cn-links-object a:hover {
+.cn-page a.cn-contact-email-link {
+	border-bottom-color: var(--signal-dim);
+}
+
+.cn-links-object a:hover,
+.cn-page a.cn-contact-email-link:hover {
 	border-color: var(--signal);
 }
 
@@ -307,13 +360,12 @@
 	align-items: center;
 	gap: 9px;
 	min-height: 44px;
-	font-family: var(--mono);
-	font-size: 0.85rem;
+	font-size: var(--text-ui);
 	color: var(--ink);
 	background: var(--signal);
 	border: 1px solid var(--signal);
 	padding: 10px 18px;
-	transition: background 0.15s ease, color 0.15s ease;
+	transition: background var(--ease-state), color var(--ease-state);
 }
 
 .cn-page a.cn-btn {
@@ -333,7 +385,7 @@
 /* ---------- section shell ---------- */
 
 .cn-page section {
-	padding: 56px 0;
+	padding: var(--section) 0;
 	border-top: 1px solid var(--rule);
 }
 
@@ -355,8 +407,7 @@ h2.cn-eyebrow {
 }
 
 .cn-section-note {
-	font-family: var(--mono);
-	font-size: 0.78rem;
+	font-size: var(--text-sm);
 	color: var(--slate);
 }
 
@@ -371,10 +422,10 @@ h2.cn-eyebrow {
 	display: grid;
 	grid-template-columns: 84px 1fr auto;
 	align-items: baseline;
-	gap: 18px;
+	gap: var(--space-18);
 	padding: 16px 10px;
 	border-bottom: 1px solid var(--rule-faint);
-	transition: background 0.15s ease;
+	transition: background var(--ease-state);
 }
 
 .cn-release:first-child {
@@ -386,8 +437,7 @@ h2.cn-eyebrow {
 }
 
 .cn-release .cn-v {
-	font-family: var(--mono);
-	font-size: 0.85rem;
+	font-size: var(--text-ui);
 	color: var(--slate);
 	font-variant-numeric: tabular-nums;
 }
@@ -404,13 +454,13 @@ h2.cn-eyebrow {
 
 .cn-release-main .cn-role {
 	color: var(--slate);
-	font-size: 0.88rem;
+	font-size: var(--text-md);
 	margin-top: 2px;
 }
 
 .cn-release-main .cn-release-note {
 	color: var(--paper-dim);
-	font-size: 0.78rem;
+	font-size: var(--text-sm);
 	font-style: italic;
 	margin-top: 2px;
 	opacity: 0.7;
@@ -418,9 +468,9 @@ h2.cn-eyebrow {
 
 .cn-release-main .cn-release-highlights {
 	margin: 8px 0 0;
-	padding-left: 18px;
+	padding-left: var(--space-18);
 	color: var(--paper-dim);
-	font-size: 0.85rem;
+	font-size: var(--text-ui);
 	line-height: 1.5;
 }
 
@@ -429,8 +479,7 @@ h2.cn-eyebrow {
 }
 
 .cn-release .cn-when {
-	font-family: var(--mono);
-	font-size: 0.8rem;
+	font-size: var(--text-meta);
 	color: var(--slate);
 	font-variant-numeric: tabular-nums;
 	white-space: nowrap;
@@ -443,8 +492,7 @@ h2.cn-eyebrow {
 
 .cn-collapsed-hint {
 	padding: 18px 10px 4px;
-	font-family: var(--mono);
-	font-size: 0.8rem;
+	font-size: var(--text-meta);
 	color: var(--paper-dim);
 	letter-spacing: 0.02em;
 }
@@ -458,13 +506,11 @@ h2.cn-eyebrow {
 .cn-builds {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 18px;
+	gap: var(--space-18);
 }
 
 .cn-build {
-	border: 1px solid var(--rule);
 	padding: 22px 24px 20px;
-	background: var(--ink-raised);
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
@@ -484,7 +530,6 @@ h2.cn-eyebrow {
 }
 
 .cn-build-tag {
-	font-family: var(--mono);
 	font-size: 0.7rem;
 	letter-spacing: 0.06em;
 	color: var(--signal);
@@ -501,7 +546,6 @@ h2.cn-eyebrow {
 }
 
 .cn-build-run {
-	font-family: var(--mono);
 	font-size: 0.84rem;
 	color: var(--slate);
 	padding-top: 8px;
@@ -525,18 +569,15 @@ h2.cn-eyebrow {
 .cn-panels {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-	gap: 18px;
+	gap: var(--space-18);
 }
 
 .cn-panel {
-	border: 1px solid var(--rule);
-	background: var(--ink-raised);
 	padding: 22px 24px;
 }
 
 .cn-panel-title {
-	font-family: var(--mono);
-	font-size: 0.78rem;
+	font-size: var(--text-sm);
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	color: var(--slate);
@@ -548,8 +589,7 @@ h2.cn-eyebrow {
 }
 
 .cn-tag-group-label {
-	font-family: var(--mono);
-	font-size: 0.72rem;
+	font-size: var(--text-xs);
 	color: var(--paper-dim);
 	margin-bottom: 8px;
 }
@@ -561,8 +601,7 @@ h2.cn-eyebrow {
 }
 
 .cn-tag {
-	font-family: var(--mono);
-	font-size: 0.78rem;
+	font-size: var(--text-sm);
 	color: var(--paper);
 	border: 1px solid var(--rule);
 	padding: 3px 9px;
@@ -582,13 +621,12 @@ h2.cn-eyebrow {
 
 .cn-simple-item-sub {
 	color: var(--slate);
-	font-size: 0.85rem;
+	font-size: var(--text-ui);
 	margin-top: 2px;
 }
 
 .cn-simple-item-meta {
-	font-family: var(--mono);
-	font-size: 0.78rem;
+	font-size: var(--text-sm);
 	color: var(--paper-dim);
 	margin-top: 6px;
 	display: flex;
@@ -619,8 +657,7 @@ h2.cn-eyebrow {
 	justify-content: space-between;
 	gap: 16px;
 	flex-wrap: wrap;
-	font-family: var(--mono);
-	font-size: 0.8rem;
+	font-size: var(--text-meta);
 	color: var(--slate);
 }
 
@@ -641,6 +678,35 @@ h2.cn-eyebrow {
 }
 .cn-foot-links a:hover {
 	color: var(--signal);
+}
+
+/* ---------- shared page shells ---------- */
+
+.cn-hero,
+.cn-hero-lite {
+	padding: var(--hero-top) 0 var(--hero-bottom);
+	border-top: none;
+}
+
+.cn-hero-grid,
+.cn-contact-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--split-gap);
+}
+
+.cn-hero-grid > *,
+.cn-contact-grid > * {
+	min-width: 0;
+}
+
+@media (min-width: 900px) {
+	.cn-hero-grid,
+	.cn-contact-grid {
+		grid-template-columns: 1.35fr 0.9fr;
+		align-items: start;
+		gap: var(--split-gap-wide);
+	}
 }
 
 @media (max-width: 620px) {
