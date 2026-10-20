@@ -228,8 +228,16 @@ const INFO = {
 
 	vibeCodingLessons: [
 		{
-			title: "CLAUDE.md",
-			detail: "This is where you set your constraints and instructions — e.g. use pytest for all test cases, don't repeat code, prefer readability over complexity, use global constants where possible. Any time you catch the AI making the same mistake twice, add a rule for it here.",
+			title: "AGENTS.md",
+			detail: "This is where you set the agent's constraints and instructions — e.g. use pytest for all test cases, don't repeat code, prefer readability over complexity, use global constants where possible. It replaces CLAUDE.md.",
+		},
+		{
+			title: "ARCHITECTURE.md",
+			detail: "Write down how the system fits together: boundaries, data flow, and the decisions that should stay put. New features should follow it, not invent a new shape.",
+		},
+		{
+			title: "DESIGN.md",
+			detail: "Capture the interface and product intent so new features stay consistent with the product.",
 		},
 		{
 			title: "Plan",
@@ -237,7 +245,11 @@ const INFO = {
 		},
 		{
 			title: "Skills",
-			detail: "If you notice yourself asking it to do the same task over and over, that's a skill worth adding to your CLAUDE.md file. It saves time and keeps the generated code consistent.",
+			detail: "If you notice yourself asking it to do the same task over and over, add a skill in a skills folder. It saves time and keeps the generated code consistent without packing every instruction into the agent file.",
+		},
+		{
+			title: "Rules",
+			detail: "The same mistake twice belongs in a rules folder now, not in the agent file. Add rules that make the agent review ARCHITECTURE.md and DESIGN.md before it adds a feature. Review those rules as models improve — one that fixed an older model can fight a newer one, and you no longer need it.",
 		},
 		{
 			title: "Test",
@@ -249,7 +261,7 @@ const INFO = {
 		},
 		{
 			title: "Plugins",
-			detail: "Be very careful adding plugins — only install what your project actually needs. Each one burns tokens and slows down the response.",
+			detail: "Be very careful adding plugins — only install what your project actually needs. Each one burns tokens and slows down the response. Review them the same way you review rules: as AI evolves, drop the ones the model no longer needs.",
 		},
 	],
 
