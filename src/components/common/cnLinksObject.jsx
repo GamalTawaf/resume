@@ -30,14 +30,6 @@ const CnLinksObject = ({ className = "" }) => {
 			,<br />
 			&nbsp;&nbsp;
 			<ExternalValue
-				href={INFO.socials.stackoverflow}
-				label="stack:"
-			>
-				stackoverflow
-			</ExternalValue>
-			,<br />
-			&nbsp;&nbsp;
-			<ExternalValue
 				href={INFO.socials.google_certified}
 				label="certified:"
 			>
