@@ -3,11 +3,15 @@ import React from "react";
 import INFO from "../../data/user";
 
 const stripProtocol = (url) =>
-	url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+	url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
 
-const linkedinHandle = INFO.socials.linkedin
-	.replace(/^https?:\/\/(www\.)?linkedin\.com\//, "")
-	.replace(/\/$/, "");
+const ExternalValue = ({ href, label, children }) => (
+	<a href={href} target="_blank" rel="noreferrer">
+		<span className="cn-key">{label}</span> "{children}"
+		<span className="cn-external" aria-hidden="true"></span>
+		<span className="cn-sr">opens in a new tab</span>
+	</a>
+);
 
 const CnLinksObject = ({ className = "" }) => {
 	return (
@@ -15,44 +19,30 @@ const CnLinksObject = ({ className = "" }) => {
 			<span className="cn-punct">const</span> links = {"{"}
 			<br />
 			&nbsp;&nbsp;
-			<span className="cn-key">github:</span>{" "}
-			<a href={INFO.socials.github} target="_blank" rel="noreferrer">
-				"{stripProtocol(INFO.socials.github)}"
-				<span className="cn-external" aria-hidden="true"></span>
-				<span className="cn-sr">opens in a new tab</span>
-			</a>
+			<ExternalValue href={INFO.socials.github} label="github:">
+				{stripProtocol(INFO.socials.github)}
+			</ExternalValue>
 			,<br />
 			&nbsp;&nbsp;
-			<span className="cn-key">linkedin:</span>{" "}
-			<a href={INFO.socials.linkedin} target="_blank" rel="noreferrer">
-				"{linkedinHandle}"
-				<span className="cn-external" aria-hidden="true"></span>
-				<span className="cn-sr">opens in a new tab</span>
-			</a>
+			<ExternalValue href={INFO.socials.linkedin} label="linkedin:">
+				{stripProtocol(INFO.socials.linkedin)}
+			</ExternalValue>
 			,<br />
 			&nbsp;&nbsp;
-			<span className="cn-key">stack:</span>{" "}
-			<a
+			<ExternalValue
 				href={INFO.socials.stackoverflow}
-				target="_blank"
-				rel="noreferrer"
+				label="stack:"
 			>
-				"stackoverflow"
-				<span className="cn-external" aria-hidden="true"></span>
-				<span className="cn-sr">opens in a new tab</span>
-			</a>
+				stackoverflow
+			</ExternalValue>
 			,<br />
 			&nbsp;&nbsp;
-			<span className="cn-key">certified:</span>{" "}
-			<a
+			<ExternalValue
 				href={INFO.socials.google_certified}
-				target="_blank"
-				rel="noreferrer"
+				label="certified:"
 			>
-				"google-cloud"
-				<span className="cn-external" aria-hidden="true"></span>
-				<span className="cn-sr">opens in a new tab</span>
-			</a>
+				google-cloud
+			</ExternalValue>
 			,<br />
 			&nbsp;&nbsp;
 			<span className="cn-key">email:</span>{" "}

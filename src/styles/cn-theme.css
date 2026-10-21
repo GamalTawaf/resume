@@ -335,10 +335,14 @@
 	color: var(--paper-dim);
 }
 
+.cn-links-object a .cn-key {
+	color: inherit;
+}
+
 .cn-links-object a,
 .cn-page a.cn-contact-email-link {
 	color: var(--signal);
-	border-bottom: 1px solid transparent;
+	border-bottom: 1px solid var(--signal-dim);
 }
 
 .cn-page a.cn-contact-email-link {
