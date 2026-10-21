@@ -8,7 +8,6 @@ const INFO = {
 	socials: {
 		github: "https://github.com/GamalTawaf/",
 		linkedin: "https://www.linkedin.com/in/gamaltawaf/",
-		stackoverflow: "https://stackoverflow.com/users/2161866/gamal-tawaf",
 		google_certified:
 			"https://www.credly.com/badges/31e81f74-ded9-43d6-b602-7ec7a3a486fc",
 	},
