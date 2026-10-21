@@ -18,7 +18,10 @@ const Certifications = ({ certifications }) => {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								View →
+								<span className="cn-external">View</span>
+								<span className="cn-sr">
+									opens in a new tab
+								</span>
 							</a>
 						)}
 					</div>

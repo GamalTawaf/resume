@@ -41,22 +41,18 @@ const Contact = () => {
 									</span>
 								</div>
 								<h1 className="cn-headline cn-reveal cn-r2">
-									Let's get in touch
+									Write to me
 								</h1>
 								<p className="cn-lede cn-reveal cn-r3">
-									Thank you for your interest in getting in
-									touch with me. I welcome your feedback,
-									questions, and suggestions — feel free to
-									email me directly at{" "}
+									Email is the direct line. I reply within a
+									day, and longer when a release is in
+									flight.{" "}
 									<a
 										href={`mailto:${INFO.main.email}`}
 										className="cn-contact-email-link"
 									>
 										{INFO.main.email}
 									</a>
-									. I make an effort to respond to all
-									messages within 24 hours, although it may
-									take me longer during busy periods.
 								</p>
 							</div>
 

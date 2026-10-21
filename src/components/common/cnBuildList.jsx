@@ -21,7 +21,12 @@ const CnBuildList = ({ items }) => (
 								target="_blank"
 								rel="noreferrer"
 							>
-								{item.linkText} →
+								<span className="cn-external">
+									{item.linkText}
+								</span>
+								<span className="cn-sr">
+									opens in a new tab
+								</span>
 							</a>
 						)}
 					</div>
