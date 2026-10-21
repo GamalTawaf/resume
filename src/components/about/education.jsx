@@ -14,6 +14,7 @@ const Education = ({ education }) => {
 					<div className="cn-simple-item-sub">{edu.institution}</div>
 					<div className="cn-simple-item-meta">
 						<span>{edu.location}</span>
+						{edu.year && <span>{edu.year}</span>}
 					</div>
 				</div>
 			))}

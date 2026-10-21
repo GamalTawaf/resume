@@ -18,12 +18,16 @@ const CnLinksObject = ({ className = "" }) => {
 			<span className="cn-key">github:</span>{" "}
 			<a href={INFO.socials.github} target="_blank" rel="noreferrer">
 				"{stripProtocol(INFO.socials.github)}"
+				<span className="cn-external" aria-hidden="true"></span>
+				<span className="cn-sr">opens in a new tab</span>
 			</a>
 			,<br />
 			&nbsp;&nbsp;
 			<span className="cn-key">linkedin:</span>{" "}
 			<a href={INFO.socials.linkedin} target="_blank" rel="noreferrer">
 				"{linkedinHandle}"
+				<span className="cn-external" aria-hidden="true"></span>
+				<span className="cn-sr">opens in a new tab</span>
 			</a>
 			,<br />
 			&nbsp;&nbsp;
@@ -34,6 +38,8 @@ const CnLinksObject = ({ className = "" }) => {
 				rel="noreferrer"
 			>
 				"stackoverflow"
+				<span className="cn-external" aria-hidden="true"></span>
+				<span className="cn-sr">opens in a new tab</span>
 			</a>
 			,<br />
 			&nbsp;&nbsp;
@@ -44,6 +50,8 @@ const CnLinksObject = ({ className = "" }) => {
 				rel="noreferrer"
 			>
 				"google-cloud"
+				<span className="cn-external" aria-hidden="true"></span>
+				<span className="cn-sr">opens in a new tab</span>
 			</a>
 			,<br />
 			&nbsp;&nbsp;

@@ -11,7 +11,8 @@ const DownloadButton = () => {
 			rel="noopener noreferrer"
 		>
 			<FontAwesomeIcon icon={faFileDownload} />
-			<span>Download Resume</span>
+			<span className="cn-external">Download Resume</span>
+			<span className="cn-sr">opens in a new tab</span>
 		</a>
 	);
 };

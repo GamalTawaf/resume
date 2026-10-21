@@ -38,7 +38,7 @@ const INFO = {
 		{
 			title: "To-do Application",
 			description:
-				"A React-based task management application built with TypeScript. Features include task creation, completion tracking, and data persistence. Demonstrates modern React practices, TypeScript integration, and responsive design principles.",
+				"A TypeScript task list: add a task, mark it done, and keep it after a refresh.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/typescript/typescript.png",
 			tag: "TypeScript",
 			linkText: "View Project",

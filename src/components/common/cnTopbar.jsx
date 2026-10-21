@@ -17,9 +17,9 @@ const CnTopbar = ({ active }) => {
 				Skip to content
 			</a>
 			<div className="cn-wrap cn-topbar-inner">
-				<div className="cn-brand">
+				<Link to="/" className="cn-brand">
 					<strong>gamaltawaf</strong> / resume
-				</div>
+				</Link>
 				<nav aria-label="Primary">
 					<ul className="cn-nav-links">
 						{NAV_ITEMS.map((item) => (
