@@ -85,7 +85,7 @@ const Homepage = () => {
 								{totalReleases} releases since 2013
 							</span>
 						</div>
-						<CnReleaseList limit={6} />
+						<CnReleaseList />
 					</section>
 
 					<section aria-labelledby="cn-builds-head">

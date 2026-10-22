@@ -181,6 +181,8 @@ const INFO = {
 			"Django",
 			"asyncio",
 			"Java / Spring Boot",
+			"PHP / Laravel",
+			"Ruby on Rails",
 			"REST API design",
 		],
 		cloud: [
@@ -216,12 +218,6 @@ const INFO = {
 			issuer: "Google Cloud",
 			date: "2025 - 2027",
 			link: "https://www.credly.com/badges/31e81f74-ded9-43d6-b602-7ec7a3a486fc",
-		},
-		{
-			name: "Hugging Face AI Agents Course",
-			issuer: "Hugging Face",
-			date: "Jul 2026",
-			link: "https://gamaltawaf.github.io/resume/hf-agents-course-certificate.png",
 		},
 	],
 

@@ -45,8 +45,7 @@ const Contact = () => {
 								</h1>
 								<p className="cn-lede cn-reveal cn-r3">
 									Email is the direct line. I reply within a
-									day, and longer when a release is in
-									flight.{" "}
+									day.{" "}
 									<a
 										href={`mailto:${INFO.main.email}`}
 										className="cn-contact-email-link"
