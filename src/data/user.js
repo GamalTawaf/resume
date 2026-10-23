@@ -15,13 +15,13 @@ const INFO = {
 	homepage: {
 		title: "Senior Software Engineer & Google Cloud Certified Professional Cloud Architect.",
 		description:
-			"12+ years building mission-critical, high-reliability backend systems — payments at Truss, financial-services platforms at Fiserv, global MasterCard issuance at Binance, and consumer platforms serving 10M+ users at 99.9% uptime. Deep expertise in distributed systems, observability, and GCP cloud architecture, working primarily in Python today after a decade across PHP, Ruby, and Java. Proven technical lead who has hired and grown engineering teams and repeatedly turned months-long integration work into weeks.",
+			"12+ years building mission-critical, high-reliability backend systems — payments at Truss, financial-services platforms at Fiserv, global MasterCard issuance at Binance, and consumer platforms serving 10M+ users, and a GCP platform run at 99.9% uptime. Currently fractional CTO at Attendi. Deep expertise in distributed systems, observability, and GCP cloud architecture, working primarily in Python today after a decade across PHP, Ruby, and Java. Proven technical lead who has hired and grown engineering teams and repeatedly turned months-long integration work into weeks.",
 	},
 
 	about: {
 		title: "I'm Gamal Tawaf",
 		description:
-			"I build backend systems that have to stay up: payments at Truss, financial-services platforms at Fiserv, payment-partner integrations at Binance, and enterprise systems on Google Cloud Platform. Mainly Python (FastAPI, Flask, Django), with production experience in Java/Spring Boot, PHP/Laravel, Ruby on Rails, and React. I've led teams, owned architecture end-to-end, and lately I've been building AI systems — RAG pipelines, multi-agent workflows, and compliance tooling on Vertex AI.",
+			"I build backend systems that have to stay up: payments at Truss, financial-services platforms at Fiserv, payment-partner integrations at Binance, and enterprise systems on Google Cloud Platform. Mainly Python (FastAPI, Flask, Django), with production experience in Java/Spring Boot, PHP/Laravel, Ruby on Rails, and React. I've led teams, owned architecture end-to-end, and I'm currently fractional CTO at Attendi. Lately I've been building AI systems — RAG systems, multi-agent workflows, and compliance tooling on Vertex AI.",
 	},
 
 	projects: [
@@ -105,6 +105,17 @@ const INFO = {
 			],
 		},
 		{
+			company: "Attendi",
+			role: "Fractional CTO",
+			duration: "Apr 2026 - Present",
+			note: "Fractional, concurrent with Fiserv and Truss",
+			highlights: [
+				"Cut hosting costs 50% by consolidating five services across two cloud providers into one GCP service and replacing manual provisioning with Terraform.",
+				"Cut small-change delivery from weeks to under a day: Jira tickets open pull requests that are reviewed and deploy on merge, including over-the-air mobile updates and store releases.",
+				"Hardened the platform for its first production customer with security fixes, audit trails for critical actions, and least-privilege access.",
+			],
+		},
+		{
 			company: "Fiserv (via Ascendion)",
 			role: "Senior Software Engineer",
 			duration: "Jan 2026 - Aug 2026",
@@ -126,7 +137,7 @@ const INFO = {
 			company: "PERCS",
 			role: "Senior Software Engineer",
 			duration: "Apr 2024 - Jan 2025",
-			note: "Startup — role eliminated in layoffs; company ceased operations in 2025",
+			note: "Company ceased operations in 2025",
 			highlights: [
 				"Scaled full-stack platform features through rapid user growth and launched Web3 games on Warpcast Frames during the protocol's early growth stage.",
 			],
@@ -153,6 +164,7 @@ const INFO = {
 			company: "VerticalScope Inc.",
 			role: "Senior Web Engineer",
 			duration: "Jul 2021 - Jun 2022",
+			note: "Recruited into Binance",
 			highlights: [
 				"Shipped features for community platforms serving 10M+ users and launched the platform's first marketplace product — a zero-to-one build and new revenue stream.",
 			],
