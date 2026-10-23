@@ -15,13 +15,13 @@ const INFO = {
 	homepage: {
 		title: "Senior Software Engineer & Google Cloud Certified Professional Cloud Architect.",
 		description:
-			"12+ years building mission-critical, high-reliability backend systems — payments at Truss, financial-services platforms at Fiserv, global MasterCard issuance at Binance, and consumer platforms serving 10M+ users. Currently fractional CTO at Attendi. Deep expertise in distributed systems, observability, and GCP cloud architecture, working primarily in Python today after a decade across PHP, Ruby, and Java. Proven technical lead who has hired and grown engineering teams and repeatedly turned months-long integration work into weeks.",
+			"12+ years building mission-critical, high-reliability backend systems — payments at Truss, financial-services platforms at Fiserv, global MasterCard issuance at Binance, and consumer platforms serving 10M+ users, and a GCP platform run at 99.9% uptime. Currently fractional CTO at Attendi. Deep expertise in distributed systems, observability, and GCP cloud architecture, working primarily in Python today after a decade across PHP, Ruby, and Java. Proven technical lead who has hired and grown engineering teams and repeatedly turned months-long integration work into weeks.",
 	},
 
 	about: {
 		title: "I'm Gamal Tawaf",
 		description:
-			"I build backend systems that have to stay up: payments at Truss, financial-services platforms at Fiserv, payment-partner integrations at Binance, and enterprise systems on Google Cloud Platform. Mainly Python (Flask, Django), with production experience in Java/Spring Boot, PHP/Laravel, and Ruby on Rails. I've led teams, owned architecture end-to-end, and I'm currently fractional CTO at Attendi. Lately I've been building AI systems — a RAG prototype, multi-agent workflows, and compliance tooling on Vertex AI.",
+			"I build backend systems that have to stay up: payments at Truss, financial-services platforms at Fiserv, payment-partner integrations at Binance, and enterprise systems on Google Cloud Platform. Mainly Python (FastAPI, Flask, Django), with production experience in Java/Spring Boot, PHP/Laravel, Ruby on Rails, and React. I've led teams, owned architecture end-to-end, and I'm currently fractional CTO at Attendi. Lately I've been building AI systems — RAG systems, multi-agent workflows, and compliance tooling on Vertex AI.",
 	},
 
 	projects: [
@@ -188,8 +188,10 @@ const INFO = {
 	skills: {
 		backend: [
 			"Python",
+			"FastAPI",
 			"Flask",
 			"Django",
+			"asyncio",
 			"Java / Spring Boot",
 			"PHP / Laravel",
 			"Ruby on Rails",
@@ -198,6 +200,8 @@ const INFO = {
 		cloud: [
 			"Google Cloud Platform",
 			"Cloud Run",
+			"Pub/Sub",
+			"Kubernetes",
 			"Docker",
 			"Terraform",
 			"Microservices",
@@ -205,7 +209,9 @@ const INFO = {
 		data: [
 			"PostgreSQL",
 			"MySQL",
+			"Redis",
 			"BigQuery",
+			"Real-time event pipelines",
 		],
 		delivery: [
 			"OpenTelemetry",
@@ -215,7 +221,7 @@ const INFO = {
 			"pytest",
 			"JUnit",
 		],
-		ai: ["Vertex AI", "Gemini", "LangChain", "LangGraph", "RAG prototype"],
+		ai: ["Vertex AI", "Gemini", "LangChain", "LangGraph", "RAG systems"],
 	},
 
 	certifications: [
