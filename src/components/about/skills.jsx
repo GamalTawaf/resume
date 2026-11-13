@@ -2,6 +2,7 @@ import React from "react";
 
 const CATEGORIES = [
 	{ key: "backend", label: "Backend" },
+	{ key: "frontend", label: "Frontend" },
 	{ key: "cloud", label: "Cloud & Architecture" },
 	{ key: "data", label: "Data & Real-Time" },
 	{ key: "delivery", label: "Observability & Delivery" },
