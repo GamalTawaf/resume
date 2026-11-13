@@ -143,14 +143,6 @@ const INFO = {
 			],
 		},
 		{
-			company: "University of Toronto (via Tundra)",
-			role: "Senior Software Engineer (Contract)",
-			duration: "Jan 2024 - Apr 2024",
-			highlights: [
-				"Delivered a fixed-scope modernization: Laravel v8 to v10 upgrade with unit testing introduced to 90% coverage.",
-			],
-		},
-		{
 			company: "Binance - Card & Pay",
 			role: "Senior Software Engineer",
 			duration: "Jul 2022 - Jul 2023",
