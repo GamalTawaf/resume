@@ -3,8 +3,6 @@ const INFO = {
 		title: "Gamal Tawaf Resume",
 		name: "Gamal Tawaf",
 		email: "ja.tawaf@gmail.com",
-		location: "London, ON, Canada",
-		openToRelocate: true,
 	},
 
 	socials: {
@@ -17,7 +15,7 @@ const INFO = {
 	homepage: {
 		title: "Senior Software Engineer & Google Cloud Certified Professional Cloud Architect.",
 		description:
-			"12+ years building high-reliability backends across payments and large-scale platforms — distributed systems, observability, and GCP, with Python as the primary language. Currently fractional CTO at Attendi. Technical lead who grows engineering teams and compresses partner integrations from months to weeks. Based in London, ON — open to relocate.",
+			"12+ years building high-reliability backends across payments and large-scale platforms — distributed systems, observability, and GCP, with Python as the primary language. Currently fractional CTO at Attendi. Technical lead who grows engineering teams and compresses partner integrations from months to weeks.",
 	},
 
 	about: {

@@ -40,13 +40,6 @@ const CnLinksObject = ({ className = "" }) => {
 			<span className="cn-key">email:</span>{" "}
 			<a href={`mailto:${INFO.main.email}`}>"{INFO.main.email}"</a>,
 			<br />
-			&nbsp;&nbsp;
-			<span className="cn-key">location:</span> "
-			{INFO.main.openToRelocate
-				? `${INFO.main.location} · open to relocate`
-				: INFO.main.location}
-			",
-			<br />
 			{"}"};
 		</div>
 	);
