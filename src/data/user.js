@@ -3,6 +3,8 @@ const INFO = {
 		title: "Gamal Tawaf Resume",
 		name: "Gamal Tawaf",
 		email: "ja.tawaf@gmail.com",
+		location: "London, ON, Canada",
+		openToRelocate: true,
 	},
 
 	socials: {
@@ -15,7 +17,7 @@ const INFO = {
 	homepage: {
 		title: "Senior Software Engineer & Google Cloud Certified Professional Cloud Architect.",
 		description:
-			"12+ years building high-reliability backends across payments and large-scale platforms — distributed systems, observability, and GCP, with Python as the primary language. Currently fractional CTO at Attendi. Technical lead who grows engineering teams and compresses partner integrations from months to weeks.",
+			"12+ years building high-reliability backends across payments and large-scale platforms — distributed systems, observability, and GCP, with Python as the primary language. Currently fractional CTO at Attendi. Technical lead who grows engineering teams and compresses partner integrations from months to weeks. Based in London, ON — open to relocate.",
 	},
 
 	about: {
@@ -105,17 +107,6 @@ const INFO = {
 			],
 		},
 		{
-			company: "Attendi",
-			role: "Fractional CTO",
-			duration: "Apr 2026 - Present",
-			note: "Fractional, concurrent with Fiserv and Truss",
-			highlights: [
-				"Cut hosting costs 50% by consolidating five services into one GCP service with Terraform, and hardened the platform for its first production customer.",
-				"Cut small-change delivery from weeks to under a day (Jira → PR → deploy on merge), with OTA mobile updates and store releases.",
-				"Onboarded the non-technical CEO onto the delivery workflow so he can request, ship, and verify production features end-to-end.",
-			],
-		},
-		{
 			company: "Fiserv (via Ascendion)",
 			role: "Senior Software Engineer",
 			duration: "Jan 2026 - Aug 2026",
@@ -124,6 +115,16 @@ const INFO = {
 				"Feature Lead on a core financial-services platform (Python, FastAPI, Flask, asyncio, MySQL, Redis, Pub/Sub, Kubernetes).",
 				"Introduced OpenTelemetry tracing across 24 microservices, cutting production diagnosis time by 80%.",
 				"Re-architected vendor integration across 5 microservices into configuration-driven design — new-vendor onboarding from ~2 months to ~2 weeks.",
+			],
+		},
+		{
+			company: "Attendi",
+			role: "Fractional CTO",
+			duration: "Apr 2026 - Present",
+			highlights: [
+				"Cut hosting costs 50% by consolidating five services into one GCP service with Terraform, and hardened the platform for its first production customer.",
+				"Cut small-change delivery from weeks to under a day (Jira → PR → deploy on merge), with OTA mobile updates and store releases.",
+				"Onboarded the non-technical CEO onto the delivery workflow so he can request, ship, and verify production features end-to-end.",
 			],
 		},
 		{
@@ -210,7 +211,7 @@ const INFO = {
 			"pytest",
 			"JUnit",
 		],
-		ai: ["Vertex AI", "Gemini", "LangChain", "RAG systems", "AI data pipelines"],
+		ai: ["Vertex AI", "Gemini", "LangChain", "LangGraph", "RAG systems"],
 	},
 
 	certifications: [
