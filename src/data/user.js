@@ -15,13 +15,13 @@ const INFO = {
 	homepage: {
 		title: "Senior Software Engineer & Google Cloud Certified Professional Cloud Architect.",
 		description:
-			"12+ years building mission-critical, high-reliability backend systems — payments at Truss, financial-services platforms at Fiserv, global MasterCard issuance at Binance, and consumer platforms serving 10M+ users, and a GCP platform run at 99.9% uptime. Currently fractional CTO at Attendi. Deep expertise in distributed systems, observability, and GCP cloud architecture, working primarily in Python today after a decade across PHP, Ruby, and Java. Proven technical lead who has hired and grown engineering teams and repeatedly turned months-long integration work into weeks.",
+			"12+ years building high-reliability backends across payments and large-scale platforms — distributed systems, observability, and GCP, with Python as the primary language. Currently fractional CTO at Attendi. Technical lead who grows engineering teams and compresses partner integrations from months to weeks.",
 	},
 
 	about: {
 		title: "I'm Gamal Tawaf",
 		description:
-			"I build backend systems that have to stay up: payments at Truss, financial-services platforms at Fiserv, payment-partner integrations at Binance, and enterprise systems on Google Cloud Platform. Mainly Python (FastAPI, Flask, Django), with production experience in Java/Spring Boot, PHP/Laravel, Ruby on Rails, and React. I've led teams, owned architecture end-to-end, and I'm currently fractional CTO at Attendi. Lately I've been building AI systems — RAG systems, multi-agent workflows, and compliance tooling on Vertex AI.",
+			"I build high-reliability backends across payments and large-scale platforms — distributed systems, observability, and GCP, mainly in Python (FastAPI, Flask, Django), with production experience in Java/Spring Boot, PHP/Laravel, and React. I've led teams, owned architecture end-to-end, and I'm currently fractional CTO at Attendi. Lately I've been building AI systems — RAG pipelines, compliance tooling on Vertex AI, and multi-agent workflows.",
 	},
 
 	projects: [
@@ -100,8 +100,8 @@ const INFO = {
 			role: "Senior Software Engineer",
 			duration: "Aug 2026 - Oct 2026",
 			highlights: [
-				"Cut local setup for new engineers to under an hour by introducing a Docker-based development environment, and set the team rules for agent-written code.",
-				"Proposed a GCP infrastructure plan estimated to cut the cloud bill by 50%, audited the cloud setup for compliance, and took on-call for production payment issues.",
+				"Cut new-engineer local setup to under an hour with Docker, and defined conventions for agent-written code.",
+				"Designed a GCP cost-reduction plan targeting ~50% via Committed Use Discounts and ~20% more via rightsizing; audited infrastructure for compliance and owned on-call for payment issues.",
 			],
 		},
 		{
@@ -110,18 +110,20 @@ const INFO = {
 			duration: "Apr 2026 - Present",
 			note: "Fractional, concurrent with Fiserv and Truss",
 			highlights: [
-				"Cut hosting costs 50% by consolidating five services across two cloud providers into one GCP service and replacing manual provisioning with Terraform.",
-				"Cut small-change delivery from weeks to under a day: Jira tickets open pull requests that are reviewed and deploy on merge, including over-the-air mobile updates and store releases.",
-				"Hardened the platform for its first production customer with security fixes, audit trails for critical actions, and least-privilege access.",
+				"Cut hosting costs 50% by consolidating five services into one GCP service with Terraform, and hardened the platform for its first production customer.",
+				"Cut small-change delivery from weeks to under a day (Jira → PR → deploy on merge), with OTA mobile updates and store releases.",
+				"Onboarded the non-technical CEO onto the delivery workflow so he can request, ship, and verify production features end-to-end.",
 			],
 		},
 		{
 			company: "Fiserv (via Ascendion)",
 			role: "Senior Software Engineer",
 			duration: "Jan 2026 - Aug 2026",
+			note: "Contract via Ascendion",
 			highlights: [
-				"Introduced OpenTelemetry distributed tracing across 24 microservices, cutting production issue diagnosis time by 80%.",
-				"Re-architected vendor integration across 5 microservices into a configuration-driven design — new-vendor onboarding went from ~2 months of code changes to ~2 weeks of configuration.",
+				"Feature Lead on a core financial-services platform (Python, FastAPI, Flask, asyncio, MySQL, Redis, Pub/Sub, Kubernetes).",
+				"Introduced OpenTelemetry tracing across 24 microservices, cutting production diagnosis time by 80%.",
+				"Re-architected vendor integration across 5 microservices into configuration-driven design — new-vendor onboarding from ~2 months to ~2 weeks.",
 			],
 		},
 		{
@@ -130,14 +132,14 @@ const INFO = {
 			duration: "Jan 2025 - Jan 2026",
 			highlights: [
 				"Recruited and led the full engineering team while owning architecture for a mission-critical enterprise portal (Python/Django on GCP) serving 250+ staff.",
-				"Designed an AI compliance system analyzing call-center audio with Gemini and Vertex AI; ran the platform at 99.9% uptime with one-click CI/CD at a 99.8% success rate.",
+				"Designed an AI compliance system with Gemini and Vertex AI; ran the platform at 99.9% uptime with one-click CI/CD at a 99.8% success rate.",
 			],
 		},
 		{
 			company: "PERCS",
 			role: "Senior Software Engineer",
 			duration: "Apr 2024 - Jan 2025",
-			note: "Company ceased operations in 2025",
+			note: "Layoff",
 			highlights: [
 				"Scaled full-stack platform features through rapid user growth and launched Web3 games on Warpcast Frames during the protocol's early growth stage.",
 			],
@@ -146,10 +148,10 @@ const INFO = {
 			company: "Binance - Card & Pay",
 			role: "Senior Software Engineer",
 			duration: "Jul 2022 - Jul 2023",
-			note: "Role impacted by 2023 global workforce reduction",
+			note: "Layoff",
 			highlights: [
 				"Integrated 3 global payment partners' REST APIs to enable MasterCard issuance across Europe, the Middle East, and South America.",
-				"Migrated the card-ordering service from Laravel to Java/Spring Boot, cutting new payment-partner onboarding from ~3 months to ~1 week.",
+				"Migrated card-ordering and KYC services from Laravel to Java/Spring Boot 3, cutting new payment-partner onboarding from ~3 months to ~1 week.",
 			],
 		},
 		{
@@ -167,13 +169,8 @@ const INFO = {
 			duration: "Feb 2016 - Jul 2021",
 			highlights: [
 				"Led the in-house migration of a business-critical Rails app off a third-party vendor (Rails v3→v5, MySQL→PostgreSQL in 6 months), delivering $500K in annual savings.",
-				"Hired, trained, and led a team of 5–7 developers over 5+ years, growing engineers from junior to senior.",
+				"Hired, trained, and led a team of 5–7 developers over 5+ years; built a BI visualization tool (React, D3.js, Python, Qlik) for leadership.",
 			],
-		},
-		{
-			company: "Carlton Group · Golf Canada · PAVR Labs",
-			role: "Application Developer — earlier roles",
-			duration: "Mar 2013 - Jan 2016",
 		},
 	],
 
@@ -186,9 +183,9 @@ const INFO = {
 			"asyncio",
 			"Java / Spring Boot",
 			"PHP / Laravel",
-			"Ruby on Rails",
 			"REST API design",
 		],
+		frontend: ["React", "Svelte", "D3.js", "JavaScript", "HTML"],
 		cloud: [
 			"Google Cloud Platform",
 			"Cloud Run",
@@ -213,7 +210,7 @@ const INFO = {
 			"pytest",
 			"JUnit",
 		],
-		ai: ["Vertex AI", "Gemini", "LangChain", "LangGraph", "RAG systems"],
+		ai: ["Vertex AI", "Gemini", "LangChain", "RAG systems", "AI data pipelines"],
 	},
 
 	certifications: [
