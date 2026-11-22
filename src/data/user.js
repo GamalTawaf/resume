@@ -96,12 +96,13 @@ const INFO = {
 
 	workHistory: [
 		{
-			company: "Truss Payments",
-			role: "Senior Software Engineer",
-			duration: "Aug 2026 - Oct 2026",
+			company: "Attendi",
+			role: "Fractional CTO",
+			duration: "Apr 2026 - Present",
 			highlights: [
-				"Cut new-engineer local setup to under an hour with Docker, and defined conventions for agent-written code.",
-				"Designed a GCP cost-reduction plan targeting ~50% via Committed Use Discounts and ~20% more via rightsizing; audited infrastructure for compliance and owned on-call for payment issues.",
+				"Cut hosting costs 50% by consolidating five services into one GCP service with Terraform, and hardened the platform for its first production customer.",
+				"Cut small-change delivery from weeks to under a day (Jira → PR → deploy on merge), with OTA mobile updates and store releases.",
+				"Onboarded the non-technical CEO onto the delivery workflow so he can request, ship, and verify production features end-to-end.",
 			],
 		},
 		{
@@ -113,16 +114,6 @@ const INFO = {
 				"Feature Lead on a core financial-services platform (Python, FastAPI, Flask, asyncio, MySQL, Redis, Pub/Sub, Kubernetes).",
 				"Introduced OpenTelemetry tracing across 24 microservices, cutting production diagnosis time by 80%.",
 				"Re-architected vendor integration across 5 microservices into configuration-driven design — new-vendor onboarding from ~2 months to ~2 weeks.",
-			],
-		},
-		{
-			company: "Attendi",
-			role: "Fractional CTO",
-			duration: "Apr 2026 - Present",
-			highlights: [
-				"Cut hosting costs 50% by consolidating five services into one GCP service with Terraform, and hardened the platform for its first production customer.",
-				"Cut small-change delivery from weeks to under a day (Jira → PR → deploy on merge), with OTA mobile updates and store releases.",
-				"Onboarded the non-technical CEO onto the delivery workflow so he can request, ship, and verify production features end-to-end.",
 			],
 		},
 		{
